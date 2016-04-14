@@ -1,0 +1,49 @@
+{% extends "govuk_template.html" %}
+
+{% block head %}
+  {% include "includes/head.html" %}
+{% endblock %}
+
+{% block page_title %}
+  Your deed is not confirmed
+{% endblock %}
+
+{% block content %}
+
+<main id="wrapper" role="main">
+
+  <div id="content">
+    {% include "includes/phase_banner_beta.html" %}
+
+    <div class="grid-row">
+      <div class="column-two-thirds">
+
+    	<h1 class="heading-xlarge">Your deed is not confirmed</h1>
+
+	    <p>
+        You were not able to confirm your deed. This was not due to any mistake
+        on your part, but because the service encountered technical issues.
+      </p>
+
+      <p>
+        You will need to <a href="../enter-authentication-code">try to confirm again</a>
+      </p>
+
+      <p>
+        If you continue to experience this error <a href="../sign-my-mortgage">start
+        from the beginning</a> or you can <a href="mailto:team@emailaddress">contact us
+        via email</a>
+      </p>
+
+      </div>
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}
+
+{% block body_end %}
+  {% include "includes/scripts.html" %}
+{% endblock %}

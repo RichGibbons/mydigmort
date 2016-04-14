@@ -1,0 +1,69 @@
+{% extends "govuk_template.html" %}
+
+{% block head %}
+  {% include "includes/head.html" %}
+	<!--
+		<link href="/public/lr-style-guide/lr-styleguide/css/styleguide.css" media="screen" rel="stylesheet" type="text/css">
+	-->
+{% endblock %}
+
+{% block page_title %}
+  Borrower reference
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	{% include "includes/phase_banner_beta.html" %}
+
+	<div class="inner-block">
+
+		<div class="text error-summary" role="group" aria-labelledby="error-deed-not-found" tabindex="-1">
+
+			<h1 class="heading-medium error-summary-heading" id="error-deed-not-found">Unable to find your mortgage deed</h1>
+
+			<p>This might be because:</p>
+			<ul class="list list-bullet">
+				<li>the borrower reference was mistyped</li>
+				<li>or the date of birth was not in the format dd mm yyyy</li>
+			</ul>
+			<p>
+				If you continue to experience problems please contact your
+				conveyancer.
+			</p>
+
+		</div>
+
+		<h1 class="heading-medium">What is your borrower reference?</h1>
+		<form class="form">
+			<div class="form-group">
+				<label class="visually-hidden" for="borrowerid">
+					Borrower reference
+				</label>
+				<p class="form-hint">For example, 2eb47c</p>
+				<input type="text" class="form-control" id="borrowerid" name="borrowerid" >
+			</div>
+
+			<div class="form-group">
+				<a href="date-of-birth" class="button">Continue</a>
+			</div>
+		</form>
+
+		<details>
+			<summary>
+				I don't have a borrower reference
+			</summary>
+			<p>If you don't have a reference your should contact your conveyancer.</p>
+		</details>
+
+	</div>
+</main>
+
+{% endblock %}
+
+{% block body_end %}
+  {% include "includes/scripts.html" %}
+	<!--
+	<script type="text/javascript" src="/public/lr-style-guide/lr-styleguide/js/styleguide.min.js"></script>
+-->
+{% endblock %}
