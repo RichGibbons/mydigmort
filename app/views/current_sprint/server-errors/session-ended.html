@@ -1,0 +1,50 @@
+{% extends "govuk_template.html" %}
+
+{% block head %}
+  {% include "includes/head.html" %}
+{% endblock %}
+
+{% block proposition_header %}
+  {% include "includes/propositional_navigation.html" %}
+{% endblock %}
+
+{% block header_class %}
+  with-proposition
+{% endblock %}
+
+{% block page_title %}
+  Your session has timed out
+{% endblock %}
+
+{% block content %}
+
+<main id="wrapper" role="main">
+
+  <div id="content">
+    {% include "includes/phase_banner_beta.html" %}
+
+    <div class="inner-block">
+
+      	<h1 class="heading-xlarge">Your session has ended</h1>
+
+		    <p class="text">
+            Your session has been ended by the service or has timed out because
+            you haven’t done anything for 20 minutes.  We’ve deleted all the
+            details you’ve entered to protect your privacy.
+        </p>
+
+        <p class="text">
+            You’ll need to <a href="../sign-my-mortgage">start again</a>.
+        </p>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}
+
+{% block body_end %}
+  {% include "includes/scripts.html" %}
+{% endblock %}

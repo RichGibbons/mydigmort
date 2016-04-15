@@ -1,0 +1,61 @@
+{% extends "govuk_template.html" %}
+
+{% block head %}
+  {% include "includes/head.html" %}
+{% endblock %}
+
+{% block proposition_header %}
+  {% include "includes/propositional_navigation.html" %}
+{% endblock %}
+
+{% block header_class %}
+  with-proposition
+{% endblock %}
+
+{% block page_title %}
+  Confirming your mortgage
+{% endblock %}
+
+{% block content %}
+
+<main id="wrapper" role="main">
+
+  <div id="content">
+    {% include "includes/phase_banner_beta.html" %}
+
+    <div class="grid-row">
+      <div class="column-two-thirds">
+
+    	<h1 class="heading-xlarge">Confirming...</h1>
+
+	    <p>
+        Your mortgage deed is now being confirmed. This process may take a few
+        moments to complete.
+      </p>
+
+      <p class="panel-indent">
+        Please do not refresh this page, you will be notified when the deed has
+        been successfully confirmed.
+      </p>
+
+      </div>
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}
+
+{% block body_end %}
+  {% include "includes/scripts.html" %}
+  <script type="text/javascript">
+   var timeoutID = window.setTimeout(move, 5000);
+   function move() {
+     window.location.href = 'finished';
+   }
+  </script>
+	<!--
+	<script type="text/javascript" src="/public/lr-style-guide/lr-styleguide/js/styleguide.min.js"></script>
+-->
+{% endblock %}
