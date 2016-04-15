@@ -48,7 +48,7 @@ router.get('/:type(user_research|future_sprints|current_sprint)/how-to-proceed',
   var dob_month = req.query.dob_month;
   var dob_year = req.query.dob_year;
 
-  if (dob_day == "25" && dob_month == "12" && dob_year == "0000"){
+  if (dob_day == "00" && dob_month == "00" && dob_year == "0000"){
 
     url = '/' + req.params.type + '/incorrect-dob-format';
     res.redirect(url);
@@ -56,6 +56,11 @@ router.get('/:type(user_research|future_sprints|current_sprint)/how-to-proceed',
   } else if (dob_day == "31" && dob_month == "12" && dob_year == "99"){
 
     url = '/' + req.params.type + '/deed-not-found-error';
+    res.redirect(url);
+
+  } else if (dob_day == "25" && dob_month == "12" && dob_year == "00") {
+
+    url = '/' + req.params.type + '/deed-stopped';
     res.redirect(url);
 
   } else {
