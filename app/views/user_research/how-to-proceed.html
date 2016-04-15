@@ -1,0 +1,69 @@
+{% extends "govuk_template.html" %}
+
+{% block head %}
+  {% include "includes/head.html" %}
+{% endblock %}
+
+{% block page_title %}
+  View your mortgage deed
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+  <h1 class="heading-xlarge">View your mortgage deed</h1>
+
+	<div class="text">
+		<p class="lede">
+			Now you've signed in you can view an online version of your mortgage deed. You should:
+		</p>
+	</div>
+
+	<div class="text" class="verified-container">
+		<ol class="list-plain">
+			<li>
+				<img class="verified-bullets-img" src="/public/images/icon-step-1-2x.png">
+				<div class="verified-bullets">
+					<h3 class="heading-small">Read your mortgage deed carefully</h3>
+					<p>Compare the online version of the deed with the paper version you have received from your conveyancer. If you spot any mistakes you should let your conveyancer know.</p>
+				</div>
+			</li>
+
+      <li>
+        <img class="verified-bullets-img" src="/public/images/icon-step-2-2x.png">
+        <div class="verified-bullets">
+          <h3 class="heading-small">Confirm your mortgage deed is correct</h3>
+          <p>If you are happy there are no mistakes, then you will need to request an authentication code to be sent to your mobile phone in order to confirm the deed is correct.</p>
+        </div>
+      </li>
+
+			<li>
+				<img class="verified-bullets-img" src="/public/images/icon-step-3-2x.png">
+				<div class="verified-bullets">
+					<h3 class="heading-small">Sign your paper mortgage deed</h3>
+					<p>The online deed is not the legal mortgage. You should still sign and return your paper mortgage deed following the instructions you have from your conveyancer.</p>
+				</div>
+			</li>
+		</ol>
+	</div>
+
+	<div class="text">
+		<p>
+			<a href="mortgage-deed" class="button">
+				Continue
+			</a>
+		</p>
+	</div>
+
+</main>
+
+{% endblock %}
+
+{% block body_end %}
+  {% include "includes/scripts.html" %}
+	<!--
+	<script type="text/javascript" src="/public/lr-style-guide/lr-styleguide/js/styleguide.min.js"></script>
+-->
+{% endblock %}

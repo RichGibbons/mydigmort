@@ -1,0 +1,56 @@
+{% extends "govuk_template.html" %}
+
+{% block head %}
+  {% include "includes/head.html" %}
+{% endblock %}
+
+{% block page_title %}
+  Mortgage Deed viewed
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+	<div class="grid-row">
+    <div class="column-two-thirds">
+  		<div class="govuk-box-highlight">
+  			<h1 class="bold-large">
+          Thank you for viewing your<br/>
+          mortgage deed
+        </h1>
+        <br/>
+  		</div>
+
+  		<h2 class="heading-medium">What happens next?</h2>
+  		<p>The online deed you've viewed is not the legal deed.</p>
+  		<ul class="list list-bullet">
+  			<li>
+  				You should sign and return your paper mortgage deed following the instructions you have received from your conveyancer
+  			</li>
+  			<li>
+  				Land Registry will then update your title register to include the new mortgage
+  			</li>
+  		</ul>
+  		<p>
+  			The time this takes will vary depending on the complexity of the
+  			transaction.
+  		</p>
+
+  		<div class="division-standard-top">
+				<p><a href="#">How could we improve this service?</a></p>
+				<p><a href="#">More about the Land Registry</a></p>
+  		</div>
+    </div><!-- column-two-thirds -->
+  </div>
+</main>
+
+{% endblock %}
+
+{% block body_end %}
+  {% include "includes/scripts.html" %}
+	<!--
+	<script type="text/javascript" src="/public/lr-style-guide/lr-styleguide/js/styleguide.min.js"></script>
+-->
+{% endblock %}
