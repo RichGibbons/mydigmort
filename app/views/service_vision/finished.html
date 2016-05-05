@@ -1,0 +1,68 @@
+{% extends "govuk_template.html" %}
+
+{% block head %}
+  {% include "includes/head.html" %}
+{% endblock %}
+
+{% block proposition_header %}
+  {% include "includes/propositional_navigation.html" %}
+{% endblock %}
+
+{% block header_class %}
+  with-proposition
+{% endblock %}
+
+{% block page_title %}
+  Mortgage Deed viewed
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+	<div class="grid-row">
+    <div class="column-two-thirds">
+  		<div class="govuk-box-highlight">
+  			<h1 class="bold-large">
+          Mortgage deed signed
+        </h1>
+        <p>
+          You've digitally signed your mortgage deed
+        </p>
+
+  		</div>
+
+  		<h2 class="heading-medium">What happens next?</h2>
+  		<p>When everyone has signed the deed</p>
+  		<ul class="list list-bullet">
+  			<li>
+  				Your conveyancer will complete your mortgage and then submit it to the
+          Land Registry
+  			</li>
+  			<li>
+  				Land Registry will then update your title register to include the new
+          mortgage
+  			</li>
+  		</ul>
+  		<p>
+  			The time this takes will vary depending on the complexity of the
+  			transaction.
+  		</p>
+
+  		<div class="division-standard-top">
+				<p><a href="#">How could we improve this service?</a></p>
+				<p><a href="#">More about the Land Registry</a></p>
+  		</div>
+    </div><!-- column-two-thirds -->
+  </div>
+</main>
+
+{% endblock %}
+
+{% block body_end %}
+  {% include "includes/scripts.html" %}
+	<!--
+	<script type="text/javascript" src="/public/lr-style-guide/lr-styleguide/js/styleguide.min.js"></script>
+-->
+{% endblock %}
