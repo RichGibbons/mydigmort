@@ -1,0 +1,68 @@
+{% extends "govuk_template.html" %}
+
+{% block head %}
+  {% include "includes/head.html" %}
+{% endblock %}
+
+{% block proposition_header %}
+  {% include "includes/propositional_navigation.html" %}
+{% endblock %}
+
+{% block header_class %}
+  with-proposition
+{% endblock %}
+
+{% block page_title %}
+  View your mortgage deed
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+  <h1 class="heading-xlarge">Signing your mortgage deed</h1>
+
+	<div class="text">
+		<p class="lede">
+			You can now sign your deed, to do this you will need to enter an authentication
+      code to confirm that you are the person on the mortgage deed.
+		</p>
+	</div>
+
+	<div class="text">
+    <p>
+      We will send your authentication code to the mobile number ending <span class="bold-small">0546</span>,
+      make sure you have this easily accessible before proceeding.
+    </p>
+  </div>
+
+  <div class="text">
+    <p>
+      Once the code is sent you will only have <span class="bold-small">10 minutes</span>
+      to enter it. If you run out of time, you will be able to request a new
+      authentication code.
+    </p>
+  </div>
+
+  <div class="text">
+    <p>
+
+    </p>
+  </div>
+
+	<div class="text">
+		<p>
+			<a href="enter-authentication-code" class="button">
+				Send my code
+			</a>
+		</p>
+	</div>
+
+</main>
+
+{% endblock %}
+
+{% block body_end %}
+  {% include "includes/scripts.html" %}
+{% endblock %}
