@@ -2101,3 +2101,13 @@ dl.definition-inline dd {
 .deed-form-ref {
   margin-top: 60px;
 }
+
+.spacer_20 {
+  clear: both;
+  height: 20px;
+}
+
+.spacer_50 {
+  clear: both;
+  height: 50px;
+}
