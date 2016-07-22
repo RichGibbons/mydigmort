@@ -1,0 +1,45 @@
+{% extends "govuk_template.html" %}
+
+{% block head %}
+  {% include "includes/head.html" %}
+	<!--
+	<link href="/public/lr-style-guide/lr-styleguide/css/styleguide.css" media="screen" rel="stylesheet" type="text/css">
+-->
+{% endblock %}
+
+{% block page_title %}
+  View your mortgage deed
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	{% include "includes/phase_banner_beta.html" %}
+
+	<h1 class="heading-xlarge">Prototype for service vision</h1>
+
+	<div class="text">
+
+		<p>
+      This page contains the prototype for demonstrating the vision for the service
+      and how it will look and behave when the service goes live.
+		</p>
+
+		<h2 class="heading-medium">Sign mortgage deed flow</h2>
+		<ul class="list list-bullet">
+      <li><a href="/service_vision/sign-my-mortgage">Sign mortgage deed (including Verify)</a></li>
+      <li><a href="/service_vision/how-to-proceed">Sign mortgage deed (skipping the Verify steps)</a></li>
+		</ul>
+
+	</div>
+
+</main>
+
+{% endblock %}
+
+{% block body_end %}
+  {% include "includes/scripts.html" %}
+	<!--
+	<script type="text/javascript" src="/public/lr-style-guide/lr-styleguide/js/styleguide.min.js"></script>
+-->
+{% endblock %}

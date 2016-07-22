@@ -1,0 +1,91 @@
+{% extends "govuk_template.html" %}
+
+{% block head %}
+  {% include "includes/head.html" %}
+{% endblock %}
+
+{% block page_title %}
+  Digital Mortgage Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	<h1 class="heading-xlarge">Sign your Mortgage<br>Prototype</h1>
+
+	<p>
+		Detailed amendments are listed in the <a href="https://docs.google.com/spreadsheets/d/1cK6sUBa7G-JOkCTudZmMR8LYDDpLe-okgY1zUdmHtZs/edit#gid=1425960152">change log</a>
+	</p>
+
+	<div class="spacer_20"></div>
+
+	<table class="custom_1">
+		<tr>
+			<th width="12%" class="table_text_black">Version</th>
+			<th width="10%" class="table_text_black">Date</th>
+			<th width="30%" class="table_text_black">What's new</th>
+			<th width="40%" class="table_text_black">What's changed</th>
+		</tr>
+		<tr>
+			<td style="vertical-align: top"><a href="/version-5-1/sign-my-mortgage">v5.1</a></td>
+			<td valign="top"></td>
+			<td valign="top">
+				<li>Addition of NAA point and NAA page</li>
+			</td>
+			<td valign="top">
+				<li>Minimised the length of the verify flow</li>
+			</td>
+		</tr>
+	</table>
+
+	<div class="spacer_50"></div>
+
+	<hr>
+
+	<h1 class="heading-xlarge">Digital mortgage prototypes v4.6</h1>
+
+	<p>
+		If you want to see a list of changes for this version of each of the following prototypes
+		<a href="https://docs.google.com/spreadsheets/d/1YuBWmAsot8kfKt5eYWoEZiSlSvh7Aa5RQdu6bMG_tHs/edit#gid=0">click here</a>
+	</p>
+
+	<details>
+		<summary class="heading-medium">I want to see the end vision for the service</summary>
+		<ul>
+      <li><a href="/service_vision">Prototype for service vision</a></li>
+    </ul>
+	</details>
+
+	<details>
+		<summary class="heading-medium">I want to see the user research prototype</summary>
+		<ul>
+			<li><a href="/user_research">Prototype for user research</a></li>
+		</ul>
+	</details>
+
+	<details>
+		<summary class="heading-medium">I want to see prototypes for what is in development</summary>
+		<ul>
+			<li><a href="/future_sprints">Prototype for future sprints</a></li>
+			<li><a href="/current_sprint">Prototype for current sprint</a></li>
+		</ul>
+	</details>
+
+	<details>
+		<summary class="heading-medium">I want to see previous prototype versions</summary>
+		<div class="text">
+			<p>
+				You can view the code for previous versions of the protoype by switching to
+				the appropriate branch on github. If you would like to see it running then
+				speak to your friendly designer =)
+			</p>
+		</div>
+	</details>
+
+</main>
+
+{% endblock %}
+
+{% block body_end %}
+  {% include "includes/scripts.html" %}
+{% endblock %}
