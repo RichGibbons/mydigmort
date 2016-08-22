@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var session = require('express-session');
 
 router.get('/', function (req, res) {
 
@@ -7,39 +8,52 @@ router.get('/', function (req, res) {
 
 });
 
+router.use(session({
+  saveUninitialized: false,
+  resave: false,
+  secret: 'doesnt-matter-because-its-a-prototype'
+}));
 
-// Example routes - feel free to delete these
 
-// Passing data into a page
+/**
+ * Middleware to provide a "hack" which allows us to redirect the prototype
+ * back to the appropriate page in our application. This allows multiple proto
+ * variants to be created and for them to return to the correct place when
+ * coming back from the verify prototype
+ */
+router.use(function(req, res, next) {
 
-router.get('/examples/template-data', function (req, res) {
+  // If we're on a page containing the verify button
+  if(req.originalUrl.indexOf('sign-my-mortgage') !== -1) {
 
-  res.render('examples/template-data', { 'name' : 'Foo' });
+    // Store the current URL
+    var url = req.protocol + "://" + req.get('host') + req.originalUrl;
 
-});
+    // Replace the last component of the path with the return page
+    url = url.replace('sign-my-mortgage', 'how-to-proceed');
 
-// Branching
+    // And bosh it in the session
+    req.session['verify-return-url'] = url;
+    console.log('Setting verify return URL to', url)
 
-router.get('/examples/over-18', function (req, res) {
 
-  // get the answer from the query string (eg. ?over18=false)
-  var over18 = req.query.over18;
+  // If we're returning from verify (to the current fixed URL)
+  // And we've got a URL value in the session
+  } else if (req.originalUrl.indexOf('service_vision/how-to-proceed') !== -1 && req.session['verify-return-url']) {
 
-  if (over18 == "false"){
+    // Grab the URL back out the session
+    var return_url = req.session['verify-return-url'];
 
-    // redirect to the relevant page
-    res.redirect("/examples/under-18");
+    // Clean up after ourselves
+    delete req.session['verify-return-url'];
 
-  } else {
-
-    // if over18 is any other value (or is missing) render the page requested
-    res.render('examples/over-18');
-
+    // And issue the redirect
+    console.log('Redirecting to', return_url);
+    return res.redirect(return_url);
   }
 
+  next();
 });
-
-// add your routes here
 
 // Route to display an error when invalid reference and/or dob entered
 router.get('/:type(user_research|future_sprints|current_sprint)/how-to-proceed', function (req, res) {
