@@ -1,0 +1,96 @@
+{% extends "govuk_template.html" %}
+
+{% block head %}
+  {% include "includes/head.html" %}
+	<!--
+		<link href="/public/stylesheets/shame-v4-2.css" media="screen" rel="stylesheet" type="text/css" />
+	-->
+{% endblock %}
+
+{% block proposition_header %}
+  {% include "includes/propositional_navigation.html" %}
+{% endblock %}
+
+{% block header_class %}
+  with-proposition
+{% endblock %}
+
+{% block page_title %}
+  Confirm your mortgage deed
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+{% include "includes/phase_banner_beta.html" %}
+
+	<div class="grid-row">
+		<div class="column-two-thirds">
+
+			<h1 class="heading-xlarge">Sign your mortgage deed</h1>
+
+			<p style="background: #F8F8F8;
+    border: 1px solid #0b0c0c;
+    padding: 18px 30px 15px 54px;
+    margin-bottom: 10px;">
+				<span class="bold-small">A new authentication code has been sent</span> to your mobile number ending in <span class="bold-small">0546</span>.
+			</p>
+
+			<p class="panel panel-border-wide">
+				This may take a few minutes to arrive depending on the mobile signal in
+				your area.
+			</p>
+			
+			<div class="notice">
+		  <i class="icon icon-important">
+			<span class="visuallyhidden">Warning</span>
+		  </i>
+		  <strong class="text bold-small">
+			Warning: By entering your authentication code and clicking Sign mortgage you will be applying 
+			your digital signature to the mortgage.
+		  </strong>
+		</div>
+	  <br />
+			<form class="form" action="signing-mortgage-deed">
+
+				<div class="form-group">
+					<label class="heading-medium" for="auth_code">
+						Enter your authentication code
+						<span class="form-hint">For example, C6E78A</span>
+					</label>
+					<input type="text" class="form-control" id="auth_code" name="auth_code">
+				</div>
+				<div class="form-group">
+					<input class="button" type="submit" value="Sign mortgage">
+				</div>
+			</form>
+
+			
+			
+			<form class="form" action="resend-authentication-code">
+			<div class="form-group">
+			<p><strong class="text bold-small">
+				 Authentication Code not arrived? </strong> <a href="resend-authentication-code"><a/></p>
+				<input class="button" type="submit" value="Send new code">
+			</div>
+		</form>
+			
+			
+			<!--div class="form-group">
+				<p><a href="resend-authentication-code">Request a new authentication code<a/></p>
+			</div-->
+
+		</div>
+	</div>
+
+</main>
+
+{% endblock %}
+
+{% block body_end %}
+  {% include "includes/scripts.html" %}
+	<!--
+	<script type="text/javascript" src="/public/lr-style-guide/lr-styleguide/js/styleguide.min.js"></script>
+-->
+{% endblock %}

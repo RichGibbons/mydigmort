@@ -1,0 +1,121 @@
+{% extends "govuk_template.html" %}
+
+{% block head %}
+  {% include "includes/head.html" %}
+{% endblock %}
+
+{% block proposition_header %}
+  {% include "includes/propositional_navigation.html" %}
+{% endblock %}
+
+{% block header_class %}
+  with-proposition
+{% endblock %}
+
+{% block page_title %}
+  Mortgage Deed viewed
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+	<div class="grid-row">
+    <div class="column-two-thirds">
+  		<div class="govuk-box-highlight">
+  			<h1 class="bold-large">
+          Thank you for signing your mortgage deed
+        </h1>
+
+  		</div>
+
+  		<h2 class="heading-medium">What happens next?</h2>
+
+  		<ul class="list list-bullet">
+  			<li>
+  				If you are borrowing money with other people, they will need to sign the mortgage deed if they haven't already done this
+  			</li>
+  			<li>
+  				Once all borrowers have signed the mortgage deed, the conveyancer will be notified so that they can continue to do the legal work needed for your mortgage
+  			</li>
+  			<li>
+  				Land Registry will update your title register to include the new
+          mortgage when requested by the conveyancer
+  			</li>
+  		</ul>
+  		<p>
+  			The time this takes will vary depending on the arrangements between you and your lender and the conveyancer.
+  		</p>
+
+  		<div class="block-2 heading-block">
+					<div class="inner-block">
+							<section class="attachment-full-width">
+									 <div class="head-section">
+											<h2 class="heading-medium">Your Mortgage Deed</h2>
+										</div>
+
+
+
+
+									  <div class="content">
+												<article>
+														  <div class="govspeak">
+
+																	 <section class="attachment embedded" id="attachment_1632301">
+																	  <div class="attachment-thumb" style="clear:both;">
+																		  <a aria-hidden="true" class="thumbnail" href="/public/pdf/two-borrowers-both-signed.pdf" style="outline: 5px solid rgba(11,12,12,0.1);">
+																		  <img alt="" src="https://assets.publishing.service.gov.uk/government/assets/pub-cover-doc-afe3b0a8a9511beeca890340170aee8b5649413f948e512c9b8ce432d8513d32.png"></a>
+																	  </div>
+
+
+																			  <div class="attachment-details">
+
+																				<p class="metadata">
+																						<h2 class="title"><a aria-describedby="PDF-accessibility-help"  href="/public/pdf/two-borrowers-both-signed.pdf" rel="external">Your mortgage deed</a></h2>
+																					 <span class="type"><abbr title="Portable Document Format">PDF</abbr></span>,
+																					 <span class="file-size">200KB</span>, <span class="page-length">2 pages</span>
+
+																				</p>
+																			  </div>
+															</section>
+														  </div>
+												</article>
+									  </div>
+								  </section>
+				</div>
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+  		<div class="division-standard-top">
+				<!--p><a href="mailto:info@thelandregistry.co.uk"> How could we improve this service?</a></p-->
+
+					<!--div class="call-to-action">
+  			<p><a href="mailto:info@thelandregistry.co.uk"> How could we improve this service? info@thelandregistry.gov.uk </a></p>
+
+		</div-->
+
+
+				<p><a href="https://www.gov.uk/government/organisations/land-registry">More about the Land Registry</a></p>
+  		</div>
+    </div><!-- column-two-thirds -->
+  </div>
+</main>
+
+{% endblock %}
+
+{% block body_end %}
+  {% include "includes/scripts.html" %}
+	<!--
+	<script type="text/javascript" src="/public/lr-style-guide/lr-styleguide/js/styleguide.min.js"></script>
+-->
+{% endblock %}

@@ -1,0 +1,73 @@
+{% extends "govuk_template.html" %}
+
+{% block head %}
+  {% include "includes/head.html" %}
+	<!--
+		<link href="/public/lr-style-guide/lr-styleguide/css/styleguide.css" media="screen" rel="stylesheet" type="text/css">
+		<link href="/public/stylesheets/shame-v4-1.css" media="screen" rel="stylesheet" type="text/css" />
+	-->
+{% endblock %}
+
+{% block proposition_header %}
+  {% include "includes/propositional_navigation.html" %}
+{% endblock %}
+
+{% block header_class %}
+  with-proposition
+{% endblock %}
+
+{% block page_title %}
+  Your mortgage deed
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	{% include "includes/phase_banner_beta.html" %}
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<h1 class="heading-xlarge">Terms and Conditions</h1>
+
+			<p>
+				Before you can sign your mortgage deed you will need to agree to the Land Registry's terms and conditions
+				set out in our Signature Network Access Agreement.
+			</p>
+
+			<form action="mortgage-deed">
+				<label class="block-label" for="terms">
+					<input id="terms" name="terms" type="checkbox" value="terms">
+					I have read and agree to the <a href="naa" target="_blank" rel="external">Network Access Agreement</a>
+				</label>
+				<div class="spacer_20"></div>
+				<button class="button" id="btn">Continue</button>
+			</form>
+		</div>
+	</div>
+</main>
+
+{% endblock %}
+
+{% block body_end %}
+  {% include "includes/scripts.html" %}
+	<!--
+	<script type="text/javascript" src="/public/lr-style-guide/lr-styleguide/js/styleguide.min.js"></script>
+-->
+	<script>
+
+		var button = $('#btn');
+		var terms = $('#terms')
+
+		button.attr('disabled', 'disabled');
+
+		terms.on('change', function(e) {
+			if(terms.is(':checked')) {
+				button.removeAttr('disabled');
+			} else {
+				button.attr('disabled', 'disabled');
+			}
+		});
+
+
+	</script>
+
+{% endblock %}
