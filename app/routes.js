@@ -14,6 +14,36 @@ router.use(session({
   secret: 'doesnt-matter-because-its-a-prototype'
 }));
 
+/**
+ * Middleware to handle the storage and retrieval of form values in session storage
+ * Use case is to remember the state of a form element such as a checkbox across
+ * page reloads
+ */
+router.use(function(req, res, next) {
+
+  if(req.body.session) {
+    for(var index in req.body.session) {
+      if(req.body.session.hasOwnProperty(index)) {
+        req.session[index] = req.body.session[index];
+        console.log('Session based form value detected. Setting req.session[', index, '] as "', req.body.session[index], '"');
+      }
+    }
+  }
+
+  if(req.query.session) {
+    for(var index in req.query.session) {
+      if(req.query.session.hasOwnProperty(index)) {
+        req.session[index] = req.query.session[index];
+        console.log('Session based form value detected. Setting req.session[', index, '] as "', req.query.session[index], '"');
+      }
+    }
+  }
+
+  res.locals.session = req.session;
+
+  next();
+});
+
 
 /**
  * Middleware to provide a "hack" which allows us to redirect the prototype
