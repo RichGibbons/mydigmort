@@ -2,6 +2,12 @@
 
 {% block head %}
   {% include "includes/head.html" %}
+
+  <style type="text/css">
+  .button-disabled {
+  	opacity: 0.5;
+  }
+  </style>
 {% endblock %}
 
 {% block proposition_header %}
@@ -33,14 +39,16 @@
 			<form action="mortgage-deed">
 				<div class="verified-container">
 					<ol>
-						<li>
+						<li id="naa-agree">
 							<img class="verified-bullets-img" src="/public/images/icon-step-1-2x.png">
 							<div class="verified-bullets">
 								<h3 class="heading-small">Agree to the Land Registry's terms and conditions for this service</h3>
-								<label class="block-label" for="terms">
-									<input id="terms" name="session[terms]" type="checkbox" value="terms"{% if session.terms%} checked{% endif %}>
-									I agree to the terms and conditions set out in the <a href="naa">Network Access Agreement</a>
-								</label>
+								<div class="form-group">
+									<label class="block-label" for="terms">
+										<input id="terms" name="session[terms]" type="checkbox" value="terms"{% if session.terms%} checked{% endif %}>
+										I agree to the terms and conditions set out in the <a href="naa">Network Access Agreement</a>
+									</label>
+								</div>
 								<div class="spacer_20"></div>
 							</div>
 						</li>
@@ -89,19 +97,54 @@
 <script>
 
 		var button = $('#btn');
-		var terms = $('#terms')
+		var terms = $('#terms');
+		var message = $('<p class="error">Please <a href="#naa-agree">indicate that you agree</a> to the terms and conditions set out in the Network Access Agreement</p>');
 
-		button.attr('disabled', 'disabled');
+		message.find('a').on('click', function(e) {
+			e.preventDefault();
 
-		terms.on('change', function(e) {
-			if(terms.is(':checked')) {
-				button.removeAttr('disabled');
-			} else {
-				button.attr('disabled', 'disabled');
-			}
+			var body = $('html, body');
+			body
+				.stop()
+				.animate({
+					scrollTop:$('#naa-agree').offset().top
+				}, 250, function() {
+					terms.closest('label').focus();
+				});
 		});
 
-		terms.trigger('change');
+		function updateButton() {
+			if(terms.is(':checked')) {
+				button.removeClass('button-disabled');
+			} else {
+				button.addClass('button-disabled');
+			}
+		}
+
+		function updateError() {
+			if(terms.is(':checked')) {
+				terms.closest('.form-group').removeClass('error');
+				message.remove()
+			} else {
+				terms.closest('.form-group').addClass('error');
+				button.before(message);
+			}
+		}
+
+		terms.on('change', function(e) {
+			updateButton();
+			updateError();
+		});
+
+		updateButton();
+
+		button.closest('form').on('submit', function(e) {
+			if(!terms.is(':checked')) {
+				e.preventDefault();
+			}
+			updateButton();
+			updateError();
+		});
 
 	</script>
 
