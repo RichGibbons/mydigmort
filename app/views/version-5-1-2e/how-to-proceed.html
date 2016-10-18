@@ -136,7 +136,6 @@
 			updateError();
 		});
 
-		updateButton();
 
 		button.closest('form').on('submit', function(e) {
 			if(!terms.is(':checked')) {
@@ -145,6 +144,8 @@
 			updateButton();
 			updateError();
 		});
+
+		updateButton();
 
 	</script>
 
