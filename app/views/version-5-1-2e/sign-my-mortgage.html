@@ -1,0 +1,131 @@
+{% extends "govuk_template.html" %}
+
+{% block head %}
+  {% include "includes/head.html" %}
+{% endblock %}
+
+{% block proposition_header %}
+  {% include "includes/propositional_navigation.html" %}
+{% endblock %}
+
+{% block header_class %}
+  with-proposition
+{% endblock %}
+
+{% block page_title %}
+  View your mortgage deed
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	{% include "includes/phase_banner_beta.html" %}
+
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<h1 class="heading-xlarge">Sign your mortgage deed</h1>
+			<p>
+				Use this service to check your mortgage details are correct, and sign your mortgage deed.
+			</p>
+			<p>
+				Signing a mortgage deed with other borrowers? 
+				Each borrower is required to sign the mortgage deed separately.
+			</p>
+			<p>
+				Once all borrowers have signed the mortgage deed the conveyancer who prepared it will then be informed.
+			</p>
+
+			<p>To do this you will need:</p>
+
+			<ul class="list list-bullet">
+				<li>to verify your identity using GOV.UK verify</li>
+				<li>to have the mobile phone you registered with your conveyancer ready</li>
+				<li>to have the borrower reference supplied to you by the conveyancer</li>
+				
+			</ul>
+
+			<div class="font-xsmall panel panel-border-wide">
+				<p>
+					By using this service you consent to Land Registry retaining your personal details for fraud prevention
+					and detection purposes. You also consent to Land Registry carrying out third party checks in relation to
+					the information supplied.
+				</p>
+				<p>
+					For further information please view our
+					<a href="https://www.gov.uk/government/organisations/land-registry/about/personal-information-charter">
+						Personal Information Charter</a>.
+				</p>
+			</div>
+
+			<br/>
+
+			<p>
+			
+			<a href="http://govuk-verify.herokuapp.com/intro?requestId=sign-mortgage" class="button button-start" role="button">Start now</a>
+
+            
+				
+				
+				
+			</p>
+
+
+
+
+			<!-- <details>
+				<summary>
+					Why is the government involved in this?
+				</summary>
+				<p>The Land Registry registers any interests affecting registered land, such as a change of mortgage.
+					Find out more <a href="https://www.gov.uk/government/organisations/land-registry/about" rel="external">here</a>.
+				</p>
+			</details> -->
+
+
+
+			<details>
+				<summary>
+					Why is the government involved in this?
+				</summary>
+				<p>The Land Registry registers any interests affecting registered land,
+				such as a change of mortgage. Find out more
+				<a href="https://www.gov.uk/government/organisations/land-registry/about" rel="external">here</a>.</p>
+			</details>
+
+
+
+
+		</div>
+	</div>
+</main>
+
+{% endblock %}
+
+{% block body_end %}
+  {% include "includes/scripts.html" %}
+	<!--
+	<script type="text/javascript" src="/public/lr-style-guide/lr-styleguide/js/styleguide.min.js"></script>
+-->
+
+<script>
+
+		var button = $('#btn');
+		var terms = $('#terms')
+
+		button.attr('disabled', 'disabled');
+
+		terms.on('change', function(e) {
+			if(terms.is(':checked')) {
+				button.removeAttr('disabled');
+			} else {
+				button.attr('disabled', 'disabled');
+			}
+		});
+
+
+	</script>
+
+
+
+
+{% endblock %}
