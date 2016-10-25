@@ -21,6 +21,8 @@ router.use(function(req, res, next) {
 
   res.locals.data = require('./data');
 
+  res.locals.data.verifyUrl = process.env.VERIFY_URL || res.locals.data.verifyUrl;
+
   next();
 });
 
