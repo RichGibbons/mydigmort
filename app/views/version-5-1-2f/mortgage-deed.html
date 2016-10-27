@@ -124,16 +124,12 @@
 				<p>
 			If you do not wish to sign the mortgage deed (for instance if you think
 			there is a mistake or you want further explanation) you should contact
-			
 			{% if session.mode == 'first' %}
-			
-			
-			{{data.company}},
-			
-			
+			{{data.company}}
 			{% endif %}
-			
-			
+			{% if session.mode == 'second' %}
+			{{data.companyb}}
+			{% endif %},
 			
 			
 			

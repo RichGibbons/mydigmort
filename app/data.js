@@ -6,6 +6,6 @@ module.exports = {
   verifyUrl: 'verify1',
   
   name: 'Bob Bobbington',
-  company: 'Sheriff of Nottingham',
-  companyb: 'Sheriff of Nottingham'
+  company: 'Samuel Montagu & Co.',
+  companyb: 'Samuel Montagu & Co.'
 };

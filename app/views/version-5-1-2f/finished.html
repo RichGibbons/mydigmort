@@ -41,11 +41,11 @@
   				
   				
 			{% if session.mode == 'first' %}
-			
-			
 			{{data.company}}
+			{% endif %}
 			
-			
+			{% if session.mode == 'second' %}
+			{{data.companyb}}
 			{% endif %}
   				
   				
@@ -56,22 +56,24 @@
   				Land Registry will update your title register to include the new
           mortgage when requested by 	
 			{% if session.mode == 'first' %}
-			
-			
 			{{data.company}}
-			
-			
 			{% endif %}
+			
+			{% if session.mode == 'second' %}
+			{{data.companyb}}
+			{% endif %}
+			
+			
+			
   			</li>
   		</ul>
   		<p>
   			The time this takes will vary depending on the arrangements between you and your lender and 	
 			{% if session.mode == 'first' %}
-			
-			
 			{{data.company}}
-			
-			
+			{% endif %}
+			{% if session.mode == 'second' %}
+			{{data.companyb}}
 			{% endif %}.
   		</p>
 
