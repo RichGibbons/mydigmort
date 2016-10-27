@@ -31,7 +31,7 @@
 		  <strong class="text bold-small">
 			This is an important legal document. <br/> YOUR HOME MAY BE REPOSSESSED IF YOU DO NOT KEEP UP REPAYMENTS ON YOUR MORTGAGE.<br/>  You should consider
 			taking independent legal advice from a conveyancer or other legal
-			adviser before you sign this mortgage.
+			adviser before you sign this mortgage deed.
 		  </strong>
 		</div>
 
@@ -124,7 +124,20 @@
 				<p>
 			If you do not wish to sign the mortgage deed (for instance if you think
 			there is a mistake or you want further explanation) you should contact
-			the conveyancer, or take independent legal advice..
+			
+			{% if session.mode == 'first' %}
+			
+			
+			{{data.company}},
+			
+			
+			{% endif %}
+			
+			
+			
+			
+			
+			or take independent legal advice..
 				</p>
 				<h2 class="heading-medium">Receiving your authentication code</h2>
 				<p>

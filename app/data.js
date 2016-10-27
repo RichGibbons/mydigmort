@@ -4,6 +4,8 @@ module.exports = {
 
   // Set to http://govuk-verify.herokuapp.com/intro?requestId=sign-mortgage in heroku env vars
   verifyUrl: 'verify1',
-
-  name: 'Bob Bobbington'
+  
+  name: 'Bob Bobbington',
+  company: 'Sheriff of Nottingham',
+  companyb: 'Sheriff of Nottingham'
 };
