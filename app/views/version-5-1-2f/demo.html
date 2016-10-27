@@ -1,0 +1,58 @@
+{% extends "govuk_template.html" %}
+
+{% block head %}
+  {% include "includes/head.html" %}
+{% endblock %}
+
+{% block proposition_header %}
+  {% include "includes/propositional_navigation.html" %}
+{% endblock %}
+
+{% block header_class %}
+  with-proposition
+{% endblock %}
+
+{% block page_title %}
+  "Mode" demo
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-xlarge">Demo</h1>
+
+      Demo custom variable: {{ data.demoCustomVariable }}<br><br>
+
+
+      <a href="?session[mode]=1">Switch to mode 1</a><br>
+      <a href="?session[mode]=2">Switch to mode 2</a><br>
+      <a href="?session[mode]=foo">Switch to mode Foo</a><br>
+
+      {% if session.mode %}
+      <h2>Currently operating in mode {{ session.mode }}</h2>
+      {% endif %}
+
+      {% if not session.mode %}
+        <p>No mode currently set!
+      {% endif %}
+
+      {% if session.mode == 1 %}
+        <p>This text only appears when we are in mode 1</p>
+      {% endif %}
+
+      {% if session.mode == 2 %}
+        <p>This text only appears when we are in mode 2</p>
+      {% endif %}
+
+      {% if session.mode == 'foo' %}
+        <p>This text only appears when we are in mode Foo</p>
+      {% endif %}
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}

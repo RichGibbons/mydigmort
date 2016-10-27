@@ -31,6 +31,16 @@
 		<div class="column-two-thirds">
 			<h1 class="heading-xlarge">Identity verified</h1>
 
+			{% if session.mode == 'first' %}
+				<p class="bold-xsmall" style="color:red">Prototype is in "first time" mode</p>
+				<p class="bold-xsmall" style="color:red">The user's name is {{data.name}}</p>
+			{% endif %}
+
+			{% if session.mode == 'second' %}
+				<p class="bold-xsmall" style="color:red">Prototype is in "second time" mode</p>
+				<p class="bold-xsmall" style="color:red">The user's name is {{data.name}}</p>
+			{% endif %}
+
 			<p>
 				Now you have verified your identity you can view and digitally sign the online version of your mortgage deed.
 				You should:

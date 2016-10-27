@@ -15,6 +15,18 @@ router.use(session({
 }));
 
 /**
+ * Middleware to expose custom data to the views
+ */
+router.use(function(req, res, next) {
+
+  res.locals.data = require('./data');
+
+  res.locals.data.verifyUrl = process.env.VERIFY_URL || res.locals.data.verifyUrl;
+
+  next();
+});
+
+/**
  * Middleware to handle the storage and retrieval of form values in session storage
  * Use case is to remember the state of a form element such as a checkbox across
  * page reloads
