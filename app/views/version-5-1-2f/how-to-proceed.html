@@ -32,14 +32,17 @@
 			<h1 class="heading-xlarge">Identity verified</h1>
 
 			{% if session.mode == 'first' %}
-				<p class="bold-xsmall" style="color:red">Prototype is in "first time" mode</p>
-				<p class="bold-xsmall" style="color:red">The user's name is {{data.name}}</p>
-				<p class="bold-xsmall" style="color:red">The user's name is {{data.company}}</p>
+				<!--p class="bold-xsmall" style="color:red">Prototype is in "first time" mode</p-->
+				<p class="bold-xsmall">First Applicant Name: {{data.name}}</p>
+				<p class="bold-xsmall">Second Applicant Name: {{data.mname}} awaiting signature</p>
+				<p class="bold-xsmall">Represented by: {{data.company}}</p>
 			{% endif %}
 
 			{% if session.mode == 'second' %}
-				<p class="bold-xsmall" style="color:red">Prototype is in "second time" mode</p>
-				<p class="bold-xsmall" style="color:red">The user's name is {{data.companyb}}</p>
+				<!--p class="bold-xsmall" style="color:red">Prototype is in "second time" mode</p-->
+				<p class="bold-xsmall">First Applicant: {{data.mname}}</p>
+				<p class="bold-xsmall">Second Applicant: {{data.fname}} signed</p>
+				<p class="bold-xsmall">Represented by: {{data.companyb}}</p>
 			{% endif %}
 
 			<p>
