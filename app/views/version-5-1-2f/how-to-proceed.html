@@ -34,7 +34,7 @@
 			{% if session.mode == 'first' %}
 				<!--p class="bold-xsmall" style="color:red">Prototype is in "first time" mode</p-->
 				<p class="bold-xsmall">First Applicant: {{data.fname}}</p>
-				<p><span style="color: #912B88;">Awaiting signature </span> <span class="bold-xsmall">Second Applicant: {{data.mname}} </span> 
+				<p><span style="color: #912B88;">Awaiting signature&#nbsp;</span> <span class="bold-xsmall">Second Applicant: {{data.mname}} </span> 
 				</p>
 				<p class="bold-xsmall">Represented by: {{data.company}}</p>
 			{% endif %}
@@ -42,7 +42,7 @@
 			{% if session.mode == 'second' %}
 				<!--p class="bold-xsmall" style="color:red">Prototype is in "second time" mode</p-->
 				<p class="bold-xsmall" >First Applicant: {{data.mname}}</p>
-				<p><span style="color: #912B88;"> Signed</span><span class="bold-xsmall">Second Applicant: {{data.fname}} </span> 
+				<p><span style="color: #912B88;">Signed&#nbsp;</span><span class="bold-xsmall">Second Applicant: {{data.fname}} </span> 
 				</p>
 				<p class="bold-xsmall">Represented by: {{data.companyb}}</p>
 			{% endif %}
