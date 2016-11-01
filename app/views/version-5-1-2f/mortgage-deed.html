@@ -103,18 +103,16 @@
 					
 					{% if session.mode == 'first' %}
 					<p style="color: #6f777b;">[Awaiting signing from Ann Smith]</p>
-				
-					
-				
-				<p style="color: #6f777b;">[Awaiting signing from Peter Smith]</p>
-				{% endif %}
+		
+					<p style="color: #6f777b;">[Awaiting signing from Peter Smith]</p>
+					{% endif %}
 					
 					
 					
-				{% if session.mode == 'second' %}
-				<p style="color: #6f777b;">[Signed by Ann Smith]</p>
-				<p style="color: #6f777b;">[Awaiting Signing from Peter Smith]</p>
-				{% endif %}
+					{% if session.mode == 'second' %}
+					<p> <span class="font-medium"> Signed by </span> <span style="font-weight:bold"> Ann Smith </span></p>
+					<p style="color: #6f777b;">[Awaiting Signing from Peter Smith]</p>
+					{% endif %}
 
 					<!-- <div class="deed-form-ref deed-document--divider"> -->
 			<div class="deed-form-ref">
