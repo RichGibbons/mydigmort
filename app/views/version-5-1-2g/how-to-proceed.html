@@ -71,11 +71,34 @@
 	<p> <span class="font-small" >Second Applicant:</span> <span style="font-weight:bold" > {{data.mname}}</span></p>
 				
 				<p>
-				<span class="font-small">Represented by: </span>
+				<span class="font-small">Arranged by: </span>
 				<span style="font-weight:bold">{{data.companyb}} </span>
 				</p>
 			{% endif %}
+				<br />
+				
+				
+				{% if session.mode == 'something-else' %}
 			
+				<p>
+				<span class="font-small">First Applicant:</span> 
+				
+				<span style="font-weight:bold"> 
+				{{data.fname}}
+				</span>
+				
+				<span style="color: #005EA5; font-style:italic; font-weight:bold">
+				&nbsp;Awaiting signing
+				</span>
+				</p>	
+				
+				
+				<p>
+				<span class="font-small">Arranged by: </span>
+				<span style="font-weight:bold">{{data.companyb}} </span>
+				</p>
+	
+			{% endif %}
 				<br />
 
 			<p>
