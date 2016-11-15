@@ -29,7 +29,8 @@
 
 	<div class="grid-row">
 		<div class="column-two-thirds">
-			<h1 class="heading-xlarge">Identity verified</h1>
+			<h1 class="heading-xlarge">Welcome to the Land Registry digital mortgage signing service</h1>
+			<!--h2 class="heading-xlarge">Identity verified</h1-->
 
 			{% if session.mode == 'first' %}
 				<!--p class="bold-xsmall" style="color:red">Prototype is in "first time" mode</p-->
@@ -45,7 +46,7 @@
 				
 				<p> <!--span class="font-small">Represented by: </span--> 
 				<span class="font-small">Arranged by: </span> 
-				<span style="font-weight:bold">
+				<span style="font-weight:bold"> 
 				{{data.company}}
 				</span>
 				</p>
@@ -56,7 +57,7 @@
 				<!--p class="bold-xsmall" style="color:red">Prototype is in "second time" mode</p-->
 				<p>
 				<span class="font-small">First Applicant:</span> 
-				
+
 				<span style="font-weight:bold"> 
 				{{data.fname}}
 				</span>
@@ -68,7 +69,12 @@
 	
 	
 	
-	<p> <span class="font-small" >Second Applicant:</span> <span style="font-weight:bold" > {{data.mname}}</span></p>
+	<p> 
+		<span class="font-small" >Second Applicant:</span> 
+		<span style="font-weight:bold" > {{data.mname}}</span> 
+		<span class="font-small" style="color: #005EA5;  font-style:italic; font-style:bold;">
+				&nbsp;Awaiting signature</span>
+				</p>
 				
 				<p>
 				<span class="font-small">Arranged by: </span>
