@@ -9,3 +9,5 @@ govuk_modules
 node_modules/*
 .tmuxp.*
 *~
+npm-debug.log
+
