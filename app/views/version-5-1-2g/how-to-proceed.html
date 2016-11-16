@@ -31,18 +31,14 @@
 		<div class="column-two-thirds">
 			<!--h1 class="heading-xlarge">Welcome to the digital mortgage signing service</h1-->
 			<!--h2 class="heading-xlarge">Identity verified</h1-->
-			<h2 class="heading-xlarge">Details</h1>
-				<p>
-			<h2>	<span class="heading-small" style="color: #85994B; font-style:bold;">Success - Identity verified!</span></h2
-			</br>
-			</p>
+			<h2 class="heading-xlarge">Your information</h1>
 
 			{% if session.mode == 'first' %}
 				<!--p class="bold-xsmall" style="color:red">Prototype is in "first time" mode</p-->
-				<p><span class="font-small">First Applicant:</span> 
+				<p><span class="font-small">First Borrower:</span> 
 				<span style="font-weight:bold">{{data.fname}}</span></p>
 				<p> 
-				<span class="font-small">Second Applicant:</span> 
+				<span class="font-small">Second Borrower:</span> 
 				<span style="font-weight:bold">{{data.mname}} </span>
 				<span class="font-small" style="color: #005EA5;  font-style:italic; font-style:bold;">
 				&nbsp;Awaiting signature
@@ -61,7 +57,7 @@
 			{% if session.mode == 'second' %}
 				<!--p class="bold-xsmall" style="color:red">Prototype is in "second time" mode</p-->
 				<p>
-				<span class="font-small">First Applicant:</span> 
+				<span class="font-small">First Borrower:</span> 
 
 				<span style="font-weight:bold"> 
 				{{data.fname}}
@@ -75,7 +71,7 @@
 	
 	
 	<p> 
-		<span class="font-small" >Second Applicant:</span> 
+		<span class="font-small" >Second Borrower:</span> 
 		<span style="font-weight:bold" > {{data.mname}}</span> 
 		<span class="font-small" style="color: #005EA5;  font-style:italic; font-style:bold;">
 				&nbsp;Awaiting signature</span>
@@ -92,7 +88,7 @@
 				{% if session.mode == 'something-else' %}
 			
 				<p>
-				<span class="font-small">First Applicant:</span> 
+				<span class="font-small">First Borrower:</span> 
 				
 				<span style="font-weight:bold"> 
 				{{data.fname}}
@@ -112,12 +108,10 @@
 			{% endif %}
 				<br />
 
-			<p>
+			<!--p>
 				Now you have verified your identity you can view and digitally sign the online version of your mortgage deed.
-				You should:
-			</p>
-			
-		
+	
+			</p-->
 
 			<form action="mortgage-deed">
 				<div class="verified-container">
@@ -125,7 +119,7 @@
 						<li id="naa-agree">
 	
 							<div>
-								<h3 class="heading-small">Agree to the Land Registry's terms and conditions for this service</h3>
+								<h3 class="heading-small">View and digitally sign your mortgage deed by agreeing Land Registry's terms and conditions for this service</h3>
 								<div class="form-group">
 									<label class="block-label" for="terms">
 										<input id="terms" name="session[terms]" type="checkbox" value="terms"{% if session.terms%} checked{% endif %}>
