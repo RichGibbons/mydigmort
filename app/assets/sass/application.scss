@@ -98,4 +98,55 @@ dl.definition-inline {
 
 
 
+.related {
+    border-top: 10px solid #005ea5;
+    padding-top: 5px;
+}
 
+.related h2 {
+    font-family: "nta", Arial, sans-serif;
+    font-weight: 400;
+    text-transform: none;
+    font-size: 18px;
+    line-height: 1.2;
+    font-weight: 600;
+    color: #0b0c0c;
+    margin-top: 0.3em;
+    margin-bottom: 0.5em;
+    position: relative;
+    
+    }
+
+
+.related-container {
+    padding: 0 15px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-top: 40px;
+    }
+    
+    
+    .related ul {
+    font-family: "nta", Arial, sans-serif;
+    font-weight: 400;
+    text-transform: none;
+    font-size: 14px;
+    line-height: 1.14286;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+    
+    
+    
+    .related li a {
+    background-position: 0 -287px;
+    background-repeat: no-repeat;
+    display: block;
+    line-height: 1.25em;
+    orphans: 2;
+}
+
+    
