@@ -50,13 +50,14 @@
 											  <br />
 											  
 											<form class="form" action="signing-mortgage-deed">
-											
+												<fieldset>
 												<div class="form-group">
 													<label class="heading-medium" for="auth_code">
 														Enter your authentication code
 														<span class="form-hint" >For example, C6E78A to authorise your signature on the deed.</span>
 													</label>
 													<input type="text" class="form-control" id="auth_code" name="auth_code">
+												</fieldset>
 											</div>
 											<div class="form-group">
 													<input class="button" type="submit" value="Sign mortgage deed">
@@ -65,22 +66,23 @@
 							
 									
 												<form class="form" action="resend-authentication-code">
-													<div class="form-group">
+													<fieldset>
+														<div class="form-group">
 															<p><strong class="text bold-small">
 																	Authentication Code not arrived?  
-															 <a href="resend-authentication-code" class="button"><a/>
+											
 															</strong></p> 
 														<input class="button" type="submit" value="Send new code">
 													</div>
+													</fieldset>
 												</form>
-										</div>
 										</div>
 	
 			<div class="column-one-third">
 		<!-- Help container for site not mobile friendly yet -->
 									 {% include "includes/john.html" %}
 					</div>		
-	
+	</div>
 	
 	
 </div>
