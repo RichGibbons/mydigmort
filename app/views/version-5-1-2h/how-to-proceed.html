@@ -35,7 +35,7 @@
 
 			{% if session.mode == 'first' %}
 				<!--p class="bold-xsmall" style="color:red">Prototype is in "first time" mode</p-->
-				<p><span class="font-small">First Borrower:</span> 
+				<p><span class="font-small">Your Name:</span> 
 				<span style="font-weight:bold">{{data.fname}}</span></p>
 				<p> 
 				<span class="font-small">Second Borrower:</span> 
@@ -57,7 +57,7 @@
 			{% if session.mode == 'second' %}
 				<!--p class="bold-xsmall" style="color:red">Prototype is in "second time" mode</p-->
 				<p>
-				<span class="font-small">First Borrower:</span> 
+				<span class="font-small">Your name:</span> 
 
 				<span style="font-weight:bold"> 
 				{{data.fname}}
@@ -85,7 +85,7 @@
 				{% if session.mode == 'something-else' %}
 			
 				<p>
-				<span class="font-small">First Borrower:</span> 
+				<span class="font-small">Your Name:</span> 
 				
 				<span style="font-weight:bold"> 
 				{{data.fname}}
