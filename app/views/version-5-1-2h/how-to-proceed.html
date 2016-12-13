@@ -1,21 +1,13 @@
-{% extends "govuk_template_customised.html" %}
+{% extends "layout.html" %}
 
 {% block head %}
-  {% include "includes/head.html" %}
+  {{ super() }}
 
   <style type="text/css">
   .button-disabled {
   	opacity: 0.5;
   }
   </style>
-{% endblock %}
-
-{% block proposition_header %}
-  {% include "includes/propositional_navigation.html" %}
-{% endblock %}
-
-{% block header_class %}
-  with-proposition
 {% endblock %}
 
 {% block page_title %}
@@ -183,10 +175,7 @@
 {% endblock %}
 
 {% block body_end %}
-  {% include "includes/scripts.html" %}
-	<!--
-	<script type="text/javascript" src="/public/lr-style-guide/lr-styleguide/js/styleguide.min.js"></script>
--->
+  {{ super() }}
 
 <script>
 

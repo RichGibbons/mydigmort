@@ -1,19 +1,4 @@
-{% extends "govuk_template_customised.html" %}
-
-{% block head %}
-  {% include "includes/head.html" %}
-	<!--
-		<link href="/public/stylesheets/shame-v4-2.css" media="screen" rel="stylesheet" type="text/css" />
-	-->
-{% endblock %}
-
-{% block proposition_header %}
-  {% include "includes/propositional_navigation.html" %}
-{% endblock %}
-
-{% block header_class %}
-  with-proposition
-{% endblock %}
+{% extends "layout.html" %}
 
 {% block page_title %}
   Confirm your mortgage deed
@@ -90,11 +75,4 @@
 </div>
 </main>
 
-{% endblock %}
-
-{% block body_end %}
-  {% include "includes/scripts.html" %}
-	<!--
-	<script type="text/javascript" src="/public/lr-style-guide/lr-styleguide/js/styleguide.min.js"></script>
--->
 {% endblock %}

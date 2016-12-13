@@ -1,20 +1,4 @@
-{% extends "govuk_template_customised.html" %}
-
-{% block head %}
-  {% include "includes/head.html" %}
-	<!--
-		<link href="/public/lr-style-guide/lr-styleguide/css/styleguide.css" media="screen" rel="stylesheet" type="text/css">
-		<link href="/public/stylesheets/shame-v4-1.css" media="screen" rel="stylesheet" type="text/css" />
-	-->
-{% endblock %}
-
-{% block proposition_header %}
-  {% include "includes/propositional_navigation.html" %}
-{% endblock %}
-
-{% block header_class %}
-  with-proposition
-{% endblock %}
+{% extends "layout.html" %}
 
 {% block page_title %}
   Your mortgage deed
@@ -48,10 +32,8 @@
 {% endblock %}
 
 {% block body_end %}
-  {% include "includes/scripts.html" %}
-	<!--
-	<script type="text/javascript" src="/public/lr-style-guide/lr-styleguide/js/styleguide.min.js"></script>
--->
+	{{ super() }}
+	
 	<script>
 
 		var button = $('#btn');
