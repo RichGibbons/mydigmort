@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  View your mortgage deed
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	{% include "includes/phase_banner_beta.html" %}
+
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<h1 class="heading-xlarge">Sign your mortgage deed</h1>
+	
+			<p>To do this you will need:</p>
+
+			<ul class="list list-bullet">
+				<li>to verify your identity using GOV.UK verify</li>
+				<li>your mobile phone registered with the conveyancer</li>
+				<li>the borrower reference supplied to you by the conveyancer</li>
+				<li>to have identification documents such as Passport, Driving Licence, ID card ready</li>
+
+			</ul>
+
+			<div class="font-xsmall panel panel-border-wide">
+				<p>
+					By using this service you allow Land Registry to store and use the information you provide to help prevent and detect fraud, according to the rules set by its
+						<a href="https://www.gov.uk/government/organisations/land-registry/about/personal-information-charter">personal information charter.</a>
+				</p>
+			
+			</div>
+
+			<br/>
+
+			<p>
+
+			<a href="{{data.verifyUrl}}" class="button button-start" role="button">Start now</a>
+
+			</p>
+
+
+			<details>
+				<summary>
+					Why is the government involved in this?
+				</summary>
+				<p> 	<a href="https://www.gov.uk/government/organisations/land-registry/about" rel="external">Land Registry</a> records any change to the ownership of registered land or property - this includes changes to mortgages and leases.
+				</p>
+			</details>
+
+
+		</div>
+	</div>
+</main>
+
+{% endblock %}
+
+{% block body_end %}
+  {{ super() }}
+
+<script>
+
+		var button = $('#btn');
+		var terms = $('#terms')
+
+		button.attr('disabled', 'disabled');
+
+		terms.on('change', function(e) {
+			if(terms.is(':checked')) {
+				button.removeAttr('disabled');
+			} else {
+				button.attr('disabled', 'disabled');
+			}
+		});
+
+
+	</script>
+
+
+
+
+{% endblock %}

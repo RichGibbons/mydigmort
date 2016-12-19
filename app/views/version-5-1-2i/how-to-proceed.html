@@ -1,0 +1,237 @@
+{% extends "layout.html" %}
+
+{% block head %}
+  {{ super() }}
+
+  <style type="text/css">
+  .button-disabled {
+  	opacity: 0.5;
+  }
+  </style>
+{% endblock %}
+
+{% block page_title %}
+  View your mortgage deed
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<!--h1 class="heading-xlarge">Welcome to the digital mortgage signing service</h1-->
+			<!--h2 class="heading-xlarge">Identity verified</h1-->
+			<h2 class="heading-xlarge">Your information</h1>
+
+			{% if session.mode == 'first' %}
+				<!--p class="bold-xsmall" style="color:red">Prototype is in "first time" mode</p-->
+				<p><span class="font-small">Your Name:</span> 
+				<span style="font-weight:bold">{{data.fname}}</span></p>
+				<p> 
+				<span class="font-small">Second Borrower:</span> 
+				<span style="font-weight:bold">{{data.mname}} </span>
+				<span class="font-small" style="color: #005EA5;  font-style:italic; font-style:bold;">
+				&nbsp;Awaiting signature
+				</span></p>
+				
+				
+				<p> <!--span class="font-small">Represented by: </span--> 
+				<span class="font-small">Arranged by: </span> 
+				<span style="font-weight:bold"> 
+				{{data.company}}
+				</span>
+				</p>
+				
+			{% endif %}
+
+			{% if session.mode == 'second' %}
+				<!--p class="bold-xsmall" style="color:red">Prototype is in "second time" mode</p-->
+				<p>
+				<span class="font-small">Your name:</span> 
+
+				<span style="font-weight:bold"> 
+				{{data.fname}}
+				</span>
+				
+				<span style="color: #005EA5; font-style:italic; font-weight:bold">
+				&nbsp;Signed
+				</span>
+				</p>	
+						<p> 
+							<span class="font-small" >Second Borrower:</span> 
+							<span style="font-weight:bold" > {{data.mname}}</span> 
+							<span class="font-small" style="color: #005EA5;  font-style:italic; font-style:bold;">
+									&nbsp;Awaiting signature</span>
+						</p>
+				
+				<p>
+				<span class="font-small">Arranged by: </span>
+				<span style="font-weight:bold">{{data.companyb}} </span>
+				</p>
+				{% endif %}
+				<br />
+				
+				
+				{% if session.mode == 'something-else' %}
+			
+				<p>
+				<span class="font-small">Your Name:</span> 
+				
+				<span style="font-weight:bold"> 
+				{{data.fname}}
+				</span>
+				
+				<span style="color: #005EA5; font-style:italic; font-weight:bold">
+				&nbsp;Awaiting signing
+				</span>
+				</p>	
+				
+				
+				<p>
+				<span class="font-small">Arranged by: </span>
+				<span style="font-weight:bold">{{data.companyb}} </span>
+				</p>
+	
+			   {% endif %}
+			   
+			   {% if session.mode == 'fourth-test' %}
+			
+				<p>
+				<span class="font-small">First Borrower:</span> 
+				
+				<span style="font-weight:bold"> 
+				{{data.fname}}
+				</span>
+				
+				<span style="color: #005EA5; font-style:italic; font-weight:bold">
+				&nbsp;Awaiting signing
+				</span>
+				</p>	
+				
+				
+				<p>
+				<span class="font-small">Arranged by: </span>
+				<span style="font-weight:bold">{{data.companyb}} </span>
+				</p>
+	
+			   {% endif %}
+			
+
+			<!--p>
+				<br />
+				Now you have verified your identity you can view and digitally sign the online version of your mortgage deed.
+			</p-->
+
+			<form action="mortgage-deed">
+				<div class="verified-container">
+					<ol>
+						<li id="naa-agree">
+	
+							<div>
+								<h3 class="heading-small">View and digitally sign your mortgage deed by agreeing Land Registry's terms and conditions for this service</h3>
+								<div class="form-group">
+									<label class="block-label" for="terms">
+										<input id="terms" name="session[terms]" type="checkbox" value="terms"{% if session.terms%} john{% endif %}>
+										I agree to the terms and conditions set out in the <a href="naa">Network Access Agreement</a>
+									</label>
+								</div>
+								<div class="spacer_20"></div>
+							</div>
+						</li>
+
+					
+					</ol>
+				</div>
+
+				<div class="spacer_20"></div>
+				<button class="button" id="btn">Continue</button>
+			</form>
+		</div>
+		
+		<div class="column-one-third">
+		
+		
+		 {% include "includes/john.html" %}
+		
+		
+		<!-- Help container for site not mobile friendly yet -->
+		
+					
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+</main>
+
+{% endblock %}
+
+{% block body_end %}
+  {{ super() }}
+
+<script>
+
+		var button = $('#btn');
+		var terms = $('#terms');
+		var message = $('<p class="error">Please <a href="#naa-agree">indicate that you agree</a> to the terms and conditions set out in the Network Access Agreement</p>');
+
+		message.find('a').on('click', function(e) {
+			e.preventDefault();
+
+			var body = $('html, body');
+			body
+				.stop()
+				.animate({
+					scrollTop:$('#naa-agree').offset().top
+				}, 250, function() {
+					terms.closest('label').focus();
+				});
+		});
+
+		function updateButton() {
+			if(terms.is(':checked')) {
+				button.removeClass('button-disabled');
+			} else {
+				button.addClass('button-disabled');
+			}
+		}
+
+		function updateError() {
+			if(terms.is(':checked')) {
+				terms.closest('.form-group').removeClass('error');
+				message.remove()
+			} else {
+				terms.closest('.form-group').addClass('error');
+				button.before(message);
+			}
+		}
+
+		terms.on('change', function(e) {
+			updateButton();
+			updateError();
+		});
+
+
+		button.closest('form').on('submit', function(e) {
+			if(!terms.is(':checked')) {
+				e.preventDefault();
+			}
+			updateButton();
+			updateError();
+		});
+
+		updateButton();
+
+	</script>
+
+
+
+{% endblock %}
