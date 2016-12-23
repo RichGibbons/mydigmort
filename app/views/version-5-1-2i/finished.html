@@ -86,7 +86,27 @@
 						</li>
 						<li>
 					
-						Once all borrowers have signed the mortgage deed, 
+						Once 
+						
+						{% if session.mode == 'first'  %}
+						you
+						{% endif %}
+						
+						{% if session.mode == 'second' %}
+						you
+						{% endif %}
+						
+						
+						{% if session.mode == 'something-else'  %}
+						 all  borrowers 
+						{% endif %}
+						
+						{% if session.mode == 'something-else'  %}
+						 all  borrowers 
+						{% endif %}
+						
+						
+						have signed the mortgage deed, 
 							
 							
 						{% if session.mode == 'first'  %}
