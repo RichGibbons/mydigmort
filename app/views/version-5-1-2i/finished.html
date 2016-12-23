@@ -81,9 +81,24 @@
 					<h2 class="heading-medium">What happens next?</h2>
 			
 					<ul class="list list-bullet">
+					
+						{% if session.mode == 'something-else'  %}
 						<li>
+						
 							If you are borrowing money with other people, they will need to sign the mortgage deed if they haven't already done this
 						</li>
+					    {% endif %}
+					    
+					    
+					    {% if session.mode == 'fourth-test'  %}
+						<li>
+						
+							If you are borrowing money with other people, they will need to sign the mortgage deed if they haven't already done this
+						</li>
+					    {% endif %}
+					    
+					    
+					    
 						<li>
 					
 						Once 
@@ -131,6 +146,8 @@
 							
 						will be notified so that they can continue to do the legal work
 						</li>
+						
+						
 						<li>
 						Land Registry will update your title register to include the new mortgage when requested by 	
 						{% if session.mode == 'first' %}
@@ -148,8 +165,6 @@
 						{% if session.mode == 'fourth-test' %}
 						{{data.companyb}}
 						{% endif %}
-						
-						
 						</li>
 					</ul>
 					<p>
