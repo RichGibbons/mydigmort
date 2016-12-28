@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Mortgage Deed viewed
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+	<div class="grid-row">
+	
+				<div class="column-two-thirds">
+					<div class="govuk-box-highlight">
+						<h1 class="bold-large">
+					You have now been logged out
+						{% if session.mode == 'first' %}
+					  {{data.fname}}
+							{% endif %}
+							
+							{% if session.mode == 'second' %}
+					  {{data.fname}}
+							{% endif %}
+							
+							{% if session.mode == 'something-else' %}
+					  {{data.fname}}
+							{% endif %}
+							
+								{% if session.mode == 'fourth-test' %}
+					  {{data.fname}}
+							{% endif %}
+					</h1>
+				  </div>
+				  
+				  
+				
+			
+					<br><br>
+					<p><a href="https://www.gov.uk/">Return to GOV.UK</a></p>
+					</div>
+    </div><!-- column-two-thirds -->
+    	
+  </div>
+</main>
+
+{% endblock %}
