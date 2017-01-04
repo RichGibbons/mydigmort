@@ -126,6 +126,29 @@
 				<span class="font-small" style="color: #005EA5;  font-style:italic; font-style:bold;">
 				&nbsp;Signed
 				</span>
+				</p>
+				
+				
+				<p> <!--span class="font-small">Represented by: </span--> 
+				<span class="font-small">Arranged by: </span> 
+				<span style="font-weight:bold"> 
+				{{data.company}}
+				</span>
+				</p>
+			    
+			    
+			   {% endif %}
+			   
+			   
+			   
+			     {% if  (session.mode == 'sixth-effective')  %}
+			   
+			   
+			     <p><span class="font-small">Your Name:</span> 
+				<span style="font-weight:bold">{{data.fname}}</span>
+				<span class="font-small" style="color: #005EA5;  font-style:italic; font-style:bold;">
+				&nbsp;Signed
+				</span>
 				
 				</p>
 				<p> 
@@ -142,17 +165,12 @@
 				{{data.company}}
 				</span>
 				</p>
-			    
-			    
-			   {% endif %}
-
-			<!--p>
-				<br />
-				Now you have verified your identity you can view and digitally sign the online version of your mortgage deed.
-			</p-->
+			     
+			     
+			     
+			     {% endif %}
 			
-			
-				{% if (session.mode == 'fifth-effective') %}
+				{% if (session.mode == 'fifth-effective' or session.mode == 'sixth-effective') %}
 				
 				<!--p>
 				<br />
@@ -216,7 +234,7 @@
 		</div>
 		
 		<div class="column-one-third">
-			{% if session.mode == 'fifth-effective' %}
+			{% if (session.mode == 'fifth-effective' or session.mode == 'sixth-effective') %}
 								<div class="spacer_20"></div>
 							 <div class="spacer_20"></div>
 							 <a href="exit" class="button" style="float:right;">Exit</a>
