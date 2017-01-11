@@ -212,6 +212,29 @@
 												
 												
 												
+												{% if (session.mode == 'second' or session.mode == 'fourth-test' ) %}
+														 <div class="spacer_20"></div>
+															 <div class="spacer_20"></div>
+																 <a href="exit" class="button" style="float:right;">finish</a>
+															 <div class="spacer_20"></div>
+												{% endif %}
+												
+												
+												
+												
+												{% if (session.mode == 'second' or session.mode == 'fourth-test' ) %}
+														 <div class="spacer_20"></div>
+															 <div class="spacer_20"></div>
+																 <a href="exit" class="button" style="float:right;">finish</a>
+															 <div class="spacer_20"></div>
+												{% endif %}
+														 
+														 
+												
+												
+												
+												
+												
 												{% if session.mode == 'first' %}, 	or take independent legal advice.
 													</p>
 												
@@ -251,21 +274,7 @@
 
 				 <div class="column-one-third">
 				 
-				 	{% if session.mode == 'second' %}
-				 <div class="spacer_20"></div>
-				 	 <div class="spacer_20"></div>
-				 		 <a href="exit" class="button" style="float:right;">Exit</a>
-				 	 <div class="spacer_20"></div>
-				  		{% endif %}
-				 
-				 
-				  	{% if session.mode == 'fourth-test' %}
-				  	<div class="spacer_20"></div>
-				  		 <div class="spacer_20"></div>
-				  		 <a href="exit" class="button" style="float:right;">Exit</a>
-				  
-				  	 <div class="spacer_20"></div>
-				  		{% endif %}
+				 	
 				
 									 {% include "includes/john.html" %}
 					</div>		
