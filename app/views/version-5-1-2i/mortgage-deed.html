@@ -209,28 +209,24 @@
 															<!--button class="button" id="btn">Back</button-->
 														</form>
 												{% endif %}
+											
 												
+												{% if (session.mode == 'second' or session.mode == 'fourth-test' ) %}
+														 <div class="spacer_20"></div>
+															 <div class="spacer_20"></div>
+																 <a href="exit" class="button" style="float:left;">finish</a>
+																  <div class="spacer_20"></div>
+															
+												{% endif %}
 												
+												<p>
 												
-												{% if session.mode == 'second' %}
+													{% if session.mode == 'second' %}
 													<a href="how-to-proceed">
 												{% elseif session.mode == 'fourth-test' %}
 													<a href="how-to-proceed">
 													View your information.</a></p>
 												{% endif %}
-												
-												
-												
-												
-												{% if (session.mode == 'second' or session.mode == 'fourth-test' ) %}
-														 <div class="spacer_20"></div>
-															 <div class="spacer_20"></div>
-																 <a href="exit" class="button" style="float:right;">finish</a>
-															 <div class="spacer_20"></div>
-												{% endif %}
-												
-												
-												
 												
 											
 														 
