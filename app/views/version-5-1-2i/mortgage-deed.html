@@ -205,10 +205,20 @@
 														
 														<h2 class="heading-medium"> Is this correct?</h2> 
 														<p> You may need to contact {{data.company}} if corrections to your mortgage deed need to be made. </p>
-															<div class="spacer_20"></div>
+															
 															<!--button class="button" id="btn">Back</button-->
 														</form>
 												{% endif %}
+												
+												
+												
+												{% if session.mode == 'second' %}
+													<a href="how-to-proceed">
+												{% elseif session.mode == 'fourth-test' %}
+													<a href="how-to-proceed">
+													View your information.</a></p>
+												{% endif %}
+												
 												
 												
 												
