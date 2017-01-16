@@ -15,7 +15,7 @@
 					<div class="govuk-box-highlight">
 						<h1 class="bold-large">
 					Thank you for viewing your mortgage deed you have successfully signed out 
-						{% if session.mode == 'first' %}
+						{% if session.mode == 'first'%}
 					  {{data.fname}}
 							{% endif %}
 							
@@ -29,7 +29,17 @@
 							
 								{% if session.mode == 'fourth-test' %}
 					  {{data.fname}}
+							{% endif %} 
+							
+							{% if session.mode == 'fifth-effective' or session.mode == 'sixth-effective' %}
+							 {{data.fname}}
 							{% endif %} !
+							
+							
+							
+						
+							
+							
 					</h1>
 				  </div>
 				  
@@ -39,7 +49,7 @@
 						<a href="/version-5-1-2i/sign-my-mortgage?session[mode]=second">
 					{% elseif session.mode == 'fourth-test' %}
 						<a href="/version-5-1-2i/sign-my-mortgage?session[mode]=fourth-test">
-						Didn't want to sign out? Sign in here!</a></p>
+						Didn't want to sign out? Sign in here!</a></p> 
 					{% endif %}
 				
 			

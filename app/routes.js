@@ -72,7 +72,14 @@ router.use(function(req, res, next) {
     var url = req.protocol + "://" + req.get('host') + req.originalUrl;
 
     // Replace the last component of the path with the return page
-    url = url.replace('sign-my-mortgage', 'how-to-proceed');
+    console.log("session mode = " + req.session['mode']);
+	if(req.session['mode'] == "Borrower-Reference-a") {
+		console.log("in Here");
+		url = url.replace('sign-my-mortgage', 'borrower_reference'); 
+	} else {
+		console.log("HELLLLOOO");
+		url = url.replace('sign-my-mortgage', 'how-to-proceed');
+	}
 
     // And bosh it in the session
     req.session['verify-return-url'] = url;
