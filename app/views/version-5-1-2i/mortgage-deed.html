@@ -219,18 +219,19 @@
 															
 												{% endif %}
 												
-												<p>
+											
 												
 													{% if session.mode == 'second' %}
-													<a href="how-to-proceed">
+														<p><a href="how-to-proceed"></p>
 												{% elseif session.mode == 'fourth-test' %}
-													<a href="how-to-proceed">
+													<p><a href="how-to-proceed"></p>
 													View your information.</a>
 												{% endif %}
+											
 													
-												{% if session.mode == 'first' %}, 	or take independent legal advice.
-													</p>
+												{% if session.mode == 'first' %}, or take independent legal advice.
 												
+													</p>
 																<h2 class="heading-medium">Receiving your authentication code</h2>
 																		<p>
 																			We will be sending your authentication code by text message to your
@@ -240,8 +241,8 @@
 												
 													{% endif %}
 													
-													{% if session.mode == 'something-else' %}, 	or take independent legal advice.
-													</p>
+													{% if session.mode == 'something-else' %}, or take independent legal advice.
+											</p>
 												
 																<h2 class="heading-medium">Receiving your authentication code</h2>
 																		<p>
