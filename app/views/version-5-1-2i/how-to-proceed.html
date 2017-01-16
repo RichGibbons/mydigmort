@@ -213,7 +213,7 @@
 								 <div class="form-group">
 									<label class="block-label" for="terms">
 										<input id="terms" name="session[terms]" type="checkbox" value="terms"{% if session.terms%} john{% endif %}>
-										I agree to the terms and conditions set out in the <a href="naa">Network Access Agreement</a>
+										I agree to the terms and conditions set out in the <a href="naab">Network Access Agreement</a>
 									</label>
 								</div>
 								<div class="spacer_20"></div>
@@ -224,8 +224,26 @@
 					</ol>
 				</div>
 
+				
+		   {% endif %}
+		   
+		   	{% if (session.mode == 'fifth-effective' or session.mode == 'sixth-effective') %}
+								<div class="spacer_20"></div>
+							 <div class="spacer_20"></div>
+							 <a href="exit" class="button" style="float:left;">finish</a>
+					  
+						 <div class="spacer_20"></div>
+								
+			
+			{% else %}			 
+		   
+		   
+		   
 				<div class="spacer_20"></div>
 				<button class="button" id="btn">Continue</button>
+				
+				
+	
 			</form>
 			
 			{% endif %}
@@ -236,11 +254,7 @@
 		<div class="column-one-third">
 			{% if (session.mode == 'fifth-effective' or session.mode == 'sixth-effective') %}
 								<div class="spacer_20"></div>
-							 <div class="spacer_20"></div>
-							 <a href="exit" class="button" style="float:right;">Exit</a>
-					  
-						 <div class="spacer_20"></div>
-								
+							
 			
 			{% else %}			 
 					 {% include "includes/john.html" %}	 
