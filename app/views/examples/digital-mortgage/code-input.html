@@ -12,9 +12,8 @@
     <div class="column-two-thirds">
       <h1 class="heading-xlarge">Code inputs</h1>
 
-      <div class="form-group">
+      <div class="form-group" style="margin-top: 60px">
         <label class="form-label-bold" for="code-input-1">Code input</label>
-        <p class="form-hint">Note: <code>size</code> and <code>maxlength</code> must be set on the input element</strong></p>
 
         <div class="code-input">
           <input type="text" class="form-control" id="code-input-1" name="code-input-1" size="6" maxlength="6" placeholder="######">
@@ -29,8 +28,107 @@
         </div>
       </div>
 
+      <div class="form-group" style="margin-top: 60px">
+        <label class="form-label-bold" for="code-input-2">Code input</label>
+
+        <div class="code-input code-input-spaced">
+          <input type="text" class="form-control" id="code-input-2" name="code-input-2" size="7" maxlength="7" placeholder="### ###">
+          <span class="mask">
+            <span class="dash"></span>
+            <span class="dash"></span>
+            <span class="dash"></span>
+            <span class="space"></span>
+            <span class="dash"></span>
+            <span class="dash"></span>
+            <span class="dash"></span>
+          </span>
+        </div>
+      </div>
+
+      <div class="form-group" style="margin-top: 60px">
+        <label class="form-label-bold" for="code-input-3">Code input</label>
+
+        <div class="code-input">
+          <input type="text" class="form-control" id="code-input-3" name="code-input-3" size="6" maxlength="6" placeholder="******">
+          <span class="mask">
+            <span class="dash"></span>
+            <span class="dash"></span>
+            <span class="dash"></span>
+            <span class="dash"></span>
+            <span class="dash"></span>
+            <span class="dash"></span>
+          </span>
+        </div>
+      </div>
+
+      <div class="form-group" style="margin-top: 60px">
+        <label class="form-label-bold" for="code-input-4">Code input</label>
+
+        <div class="code-input code-input-spaced">
+          <input type="text" class="form-control" id="code-input-4" name="code-input-4" size="7" maxlength="7" placeholder="*** ***">
+          <span class="mask">
+            <span class="dash"></span>
+            <span class="dash"></span>
+            <span class="dash"></span>
+            <span class="space"></span>
+            <span class="dash"></span>
+            <span class="dash"></span>
+            <span class="dash"></span>
+          </span>
+        </div>
+      </div>
+
     </div>
   </div>
 </main>
 
+{% endblock %}
+
+{% block body_end %}
+  {{ super() }}
+
+  <script>
+  (function() {
+    $('.code-input-spaced .form-control').each(function(index, item) {
+      var $el = $(item);
+
+      var updater;
+
+      // Older browsers don't support the input event, so we sniff for it
+      // and fall back to keypress if necessary
+      if('oninput' in document.createElement('input')) {
+        $el.on('input', function(e) {
+          update.bind(this)()
+        });
+      } else {
+        $el.on('keyup', function(e) {
+          update.bind(this)()
+        });
+      }
+
+      function update() {
+        var selectionStart = this.selectionStart;
+        var selectionEnd = this.selectionEnd;
+
+        var val = this.value.replace(' ', '');
+
+        if(val.length < 3) {
+          return;
+        }
+
+        val = [val.slice(0, 3), ' ', val.slice(3)].join('');
+
+        val = val.slice(0, this.getAttribute('maxlength'))
+
+        this.value = val;
+
+        // Only actually needed for the keypress version of this code
+        // but it causes no harm, so left in regardless
+        this.setSelectionRange(selectionStart, selectionEnd);
+      }
+
+    });
+
+  })()
+  </script>
 {% endblock %}
