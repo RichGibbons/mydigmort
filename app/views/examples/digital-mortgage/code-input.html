@@ -16,7 +16,7 @@
         <label class="form-label-bold" for="code-input-1">Code input</label>
 
         <div class="code-input">
-          <input type="text" class="form-control" id="code-input-1" name="code-input-1" size="6" maxlength="6" placeholder="######">
+          <input type="text" class="form-control" id="code-input-1" name="code-input-1" size="6" maxlength="6" placeholder="######" spellcheck="false">
           <span class="mask">
             <span class="dash"></span>
             <span class="dash"></span>
@@ -32,7 +32,7 @@
         <label class="form-label-bold" for="code-input-2">Code input</label>
 
         <div class="code-input code-input-spaced">
-          <input type="text" class="form-control" id="code-input-2" name="code-input-2" size="7" maxlength="7" placeholder="### ###">
+          <input type="text" class="form-control" id="code-input-2" name="code-input-2" size="7" maxlength="7" placeholder="### ###" spellcheck="false">
           <span class="mask">
             <span class="dash"></span>
             <span class="dash"></span>
@@ -49,7 +49,7 @@
         <label class="form-label-bold" for="code-input-3">Code input</label>
 
         <div class="code-input">
-          <input type="text" class="form-control" id="code-input-3" name="code-input-3" size="6" maxlength="6" placeholder="******">
+          <input type="text" class="form-control" id="code-input-3" name="code-input-3" size="6" maxlength="6" placeholder="******" spellcheck="false">
           <span class="mask">
             <span class="dash"></span>
             <span class="dash"></span>
@@ -65,7 +65,7 @@
         <label class="form-label-bold" for="code-input-4">Code input</label>
 
         <div class="code-input code-input-spaced">
-          <input type="text" class="form-control" id="code-input-4" name="code-input-4" size="7" maxlength="7" placeholder="*** ***">
+          <input type="text" class="form-control" id="code-input-4" name="code-input-4" size="7" maxlength="7" placeholder="*** ***" spellcheck="false">
           <span class="mask">
             <span class="dash"></span>
             <span class="dash"></span>
@@ -89,6 +89,15 @@
 
   <script>
   (function() {
+
+    $('.code-input .form-control').on('focus', function(e) {
+      $(this).closest('.code-input').addClass('code-input-focused');
+    });
+
+    $('.code-input .form-control').on('blur', function(e) {
+      $(this).closest('.code-input').removeClass('code-input-focused');
+    });
+
     $('.code-input-spaced .form-control').each(function(index, item) {
       var $el = $(item);
 
@@ -106,25 +115,34 @@
         });
       }
 
+      var previousValue = '';
+
       function update() {
         var selectionStart = this.selectionStart;
         var selectionEnd = this.selectionEnd;
 
         var val = this.value.replace(' ', '');
 
-        if(val.length < 3) {
-          return;
+        if(val.length === 3 && previousValue.length < val.length) {
+          val = val + ' ';
+
+          if(selectionStart === selectionEnd) {
+            selectionStart = ++selectionEnd;
+          }
+        } else if(val.length === 3 && previousValue.length > val.length) {
+          // do nothing, the user is using the backspace key
+        } else {
+          val = [val.slice(0, 3), ' ', val.slice(3)].join('');
+          val = val.slice(0, this.getAttribute('maxlength'))
         }
-
-        val = [val.slice(0, 3), ' ', val.slice(3)].join('');
-
-        val = val.slice(0, this.getAttribute('maxlength'))
 
         this.value = val;
 
         // Only actually needed for the keypress version of this code
         // but it causes no harm, so left in regardless
         this.setSelectionRange(selectionStart, selectionEnd);
+
+        previousValue = val.replace(' ', '');
       }
 
     });

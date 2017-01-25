@@ -3,7 +3,7 @@ $code-input-spacing: 2em;
 .code-input {
   font-family: monospace;
   letter-spacing: $code-input-spacing;
-  width: $code-input-spacing * 9;
+  // width: $code-input-spacing * 9;
   margin-top: $gutter;
   // border: 3px solid black;
   // margin: -3px;
@@ -23,9 +23,9 @@ $code-input-spacing: 2em;
     }
   }
 
-  &.code-input-focused {
-    outline: 3px solid $yellow;
-  }
+  // &.code-input-focused {
+  //   outline: 3px solid $yellow;
+  // }
 
   .mask {
     letter-spacing: 0;
@@ -46,6 +46,13 @@ $code-input-spacing: 2em;
 
   .dash {
     border-top: 1px solid black;
+  }
+
+  &.code-input-focused {
+    .dash {
+      border-color: $yellow;
+      border-top-width: 3px;
+    }
   }
 }
 
