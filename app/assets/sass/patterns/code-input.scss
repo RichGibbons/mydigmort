@@ -12,6 +12,10 @@ $code-input-spacing: 2em;
     letter-spacing: inherit;
     width: 600px;
     font-size: inherit;
+    padding-bottom: 12px;
+    position: relative;
+    z-index: 2;
+    background-color: transparent;
 
     &:focus {
       outline: 0;
@@ -22,7 +26,9 @@ $code-input-spacing: 2em;
     letter-spacing: 0;
     display: block;
     line-height: 1px;
-    height: 1px;
+    margin-top: -10px;
+    position: relative;
+    z-index: 1;
   }
 
   .dash,
