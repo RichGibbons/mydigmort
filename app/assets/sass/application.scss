@@ -4,6 +4,7 @@
 
 // Take a look at patterns.scss to see which files are imported.
 @import 'patterns';
+@import 'patterns/code-input';
 
 // If you need to create a page as part of your journey, but without GOV.UK branding
 // See localhost:3000/examples/unbranded/
@@ -114,7 +115,7 @@ dl.definition-inline {
     margin-top: 0.3em;
     margin-bottom: 0.5em;
     position: relative;
-    
+
     }
 
 
@@ -125,8 +126,8 @@ dl.definition-inline {
     box-sizing: border-box;
     margin-top: 40px;
     }
-    
-    
+
+
     .related ul {
     font-family: "nta", Arial, sans-serif;
     font-weight: 400;
@@ -138,9 +139,9 @@ dl.definition-inline {
     padding: 0;
     overflow: hidden;
 }
-    
-    
-    
+
+
+
     .related li a {
     background-position: 0 -287px;
     background-repeat: no-repeat;
@@ -149,4 +150,4 @@ dl.definition-inline {
     orphans: 2;
 }
 
-    
+
