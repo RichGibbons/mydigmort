@@ -1,0 +1,33 @@
+.code-input {
+  $spacing: 2em;
+
+  font-family: monospace;
+  letter-spacing: $spacing;
+
+  .form-control {
+    margin-top: 20px;
+    border: 0;
+    // outline: 1px dotted red;
+    // width: auto;
+    font-family: inherit;
+    letter-spacing: inherit;
+    width: 17em;
+    font-size: inherit;
+  }
+
+  .mask {
+    letter-spacing: 0;
+    display: block;
+    text-indent: - $spacing / 4;
+    line-height: 1px;
+    height: 1px;
+  }
+
+  .dash {
+    display: inline-block;
+    width: $spacing;
+    border-top: 1px solid black;
+    letter-spacing: 0;
+    height: 1px;
+  }
+}
