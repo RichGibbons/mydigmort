@@ -3,16 +3,11 @@ $code-input-spacing: 2em;
 .code-input {
   font-family: monospace;
   letter-spacing: $code-input-spacing;
-  // width: $code-input-spacing * 9;
   margin-top: $gutter;
-  // border: 3px solid black;
-  // margin: -3px;
 
   .form-control {
     margin-left: $code-input-spacing / 4;
     border: 0;
-    // outline: 1px dotted red;
-    // width: auto;
     font-family: inherit;
     letter-spacing: inherit;
     width: 600px;
@@ -23,14 +18,9 @@ $code-input-spacing: 2em;
     }
   }
 
-  // &.code-input-focused {
-  //   outline: 3px solid $yellow;
-  // }
-
   .mask {
     letter-spacing: 0;
     display: block;
-    // text-indent: - $code-input-spacing / 4;
     line-height: 1px;
     height: 1px;
   }
@@ -55,47 +45,3 @@ $code-input-spacing: 2em;
     }
   }
 }
-
-// .code-input-bordered {
-//   border: 1px solid black;
-//   padding: 15px 10px 20px 15px;
-//   overflow: hidden;
-
-//   .form-control {
-//     margin: 0 0 0 10px;
-//     width: 100%;
-//     // text-indent: $code-input-spacing / 4;
-
-//     &:focus {
-//       outline: 0;
-//     }
-//   }
-
-//   .mask {
-//     margin-left: 10px;
-//   }
-// }
-
-// .code-input-split {
-//   .form-control {
-//     border: 0;
-//     width: auto;
-//     margin-right: 5px;
-//     border-bottom: 2px solid #000;
-//     text-align: center;
-
-//     &:last-child {
-//       margin-right: 0;
-//     }
-
-//     &:focus {
-//       border-width: 0 0 2px 0;
-//       border-color: $yellow;
-//     }
-//   }
-
-//   .code-input-split-space {
-//     margin-right: 20px;
-//   }
-// }
-
