@@ -4,13 +4,14 @@ $code-input-spacing: 2em;
   font-family: monospace;
   letter-spacing: $code-input-spacing;
   margin-top: $gutter;
+  overflow: hidden;
 
   .form-control {
     margin-left: $code-input-spacing / 4;
     border: 0;
     font-family: inherit;
     letter-spacing: inherit;
-    width: 600px;
+    width: 1000px;
     font-size: inherit;
     padding-bottom: 12px;
     position: relative;
@@ -19,6 +20,10 @@ $code-input-spacing: 2em;
 
     &:focus {
       outline: 0;
+    }
+
+    &::-ms-clear {
+      display: none;
     }
   }
 
@@ -32,7 +37,7 @@ $code-input-spacing: 2em;
   }
 
   .dash,
-  .space {
+  &.code-input-spaced-active .space {
     display: inline-block;
     width: $code-input-spacing;
     letter-spacing: 0;
