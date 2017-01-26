@@ -34,7 +34,7 @@
       // Older versions of android flat out ignore maxlength, so we fix that here
       if(val.length > maxLength) {
         $el.val(val.slice(0, maxLength));
-        return false;
+        return;
       }
 
       if(val.length === 3 && previousValue.length < val.length) {
@@ -45,6 +45,8 @@
         }
       } else if(val.length === 3 && previousValue.length > val.length) {
         // do nothing, the user is using the backspace key
+      } else if(val.length === 0) {
+        // Do nothing, the input field is empty
       } else {
         val = [val.slice(0, 3), ' ', val.slice(3)].join('');
         val = val.slice(0, $el.attr('maxlength'))
