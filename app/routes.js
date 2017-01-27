@@ -74,10 +74,8 @@ router.use(function(req, res, next) {
     // Replace the last component of the path with the return page
     console.log("session mode = " + req.session['mode']);
 	if(req.session['mode'] == "Borrower-Reference-a") {
-		console.log("in Here");
-		url = url.replace('sign-my-mortgage', 'borrower_reference'); 
+		url = url.replace('sign-my-mortgage', 'borrower_reference');
 	} else {
-		console.log("HELLLLOOO");
 		url = url.replace('sign-my-mortgage', 'how-to-proceed');
 	}
 

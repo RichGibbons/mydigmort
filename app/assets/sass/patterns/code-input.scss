@@ -1,0 +1,58 @@
+$code-input-spacing: 2em;
+
+.code-input {
+  font-family: monospace;
+  letter-spacing: $code-input-spacing;
+  margin-top: $gutter;
+  overflow: hidden;
+
+  .form-control {
+    margin-left: $code-input-spacing / 4;
+    border: 0;
+    font-family: inherit;
+    letter-spacing: inherit;
+    width: 1000px;
+    font-size: inherit;
+    padding-bottom: 12px;
+    position: relative;
+    z-index: 2;
+    background-color: transparent;
+
+    &:focus {
+      outline: 0;
+    }
+
+    &::-ms-clear {
+      display: none;
+    }
+  }
+
+  .mask {
+    letter-spacing: 0;
+    display: block;
+    line-height: 1px;
+    margin-top: -10px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .dash,
+  &.code-input-spaced-active .space {
+    display: inline-block;
+    width: $code-input-spacing;
+    letter-spacing: 0;
+    height: 1px;
+    line-height: 1px;
+  }
+
+  .dash {
+    border-top: 1px solid black;
+  }
+
+  &.code-input-focused {
+    .dash {
+      border-color: $yellow;
+      border-top-width: 3px;
+    }
+  }
+}
