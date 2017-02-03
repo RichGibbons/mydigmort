@@ -9,39 +9,63 @@
 <main id="content" role="main">
 	{% include "includes/phase_banner_beta.html" %}
 
+	<dialog id="demoDialog">
+	  YOUR CONTENT HERE
+	</dialog>
+
+	<menu>
+	  <button id="showModal">Show modal</button>
+	</menu>
+
+	<script>
+		(function() {
+	  var showModal = document.getElementById('showModal');
+	  var demoDialog = document.getElementById('demoDialog');
+
+	  // Update button opens a modal dialog
+	  showModal.addEventListener('click', function() {
+			demoDialog.showModal();
+	  });
+
+	  // setTimeout(function() {
+	  // 	demoDialog.showModal();
+	  // }, 4000)
+	})();
+	</script>
+
 	<div class="grid-row">
 		<div class="column-two-thirds">
 			<h1 class="heading-xlarge">Sign your mortgage deed</h1>
-			
-			
+
+
 			{% if (session.mode == 'fifth-effective' or session.mode == 'sixth-effective') %}
-			<p>To do this you will need:</p>			
-				
+			<p>To do this you will need:</p>
+
 				<ul class="list list-bullet">
 					<li>to verify your identity using GOV.UK verify</li>
 					<li>your mobile phone registered with the conveyancer</li>
-					<li>the borrower reference supplied to you by the conveyancer. You may be asked for your borrower reference number 
-					(sent in the email inviting you to use this service).</li>		
+					<li>the borrower reference supplied to you by the conveyancer. You may be asked for your borrower reference number
+					(sent in the email inviting you to use this service).</li>
 				</ul>
-			
+
 			{% elseif (session.mode == 'fourth-test' or session.mode == 'second') %}
-	
-				<p>To do this you will need:</p>			
+
+				<p>To do this you will need:</p>
 					<ul class="list list-bullet">
 						<li>to verify your identity using GOV.UK verify</li>
 						<li>your mobile phone registered with the conveyancer</li>
-						<li>the borrower reference supplied to you by the conveyancer. You may be asked for your borrower reference number 
+						<li>the borrower reference supplied to you by the conveyancer. You may be asked for your borrower reference number
 						(sent in the email inviting you to use this service).</li>
-						
+
 					</ul>
-			
+
 			{% else %}
-			
-			<p>To do this you will need:</p>			
+
+			<p>To do this you will need:</p>
 					<ul class="list list-bullet">
 						<li>to verify your identity using GOV.UK verify</li>
 						<li>your mobile phone registered with the conveyancer</li>
-						<li>the borrower reference supplied to you by the conveyancer. You may be asked for your borrower reference number 
+						<li>the borrower reference supplied to you by the conveyancer. You may be asked for your borrower reference number
 						(sent in the email inviting you to use this service).</li>
 						<li>to have identification documents such as Passport, Driving Licence, ID card ready</li>
 					</ul>
@@ -51,11 +75,11 @@
 					By using this service you allow Land Registry to store and use the information you provide to help prevent and detect fraud, according to the rules set by its
 						<a href="https://www.gov.uk/government/organisations/land-registry/about/personal-information-charter">personal information charter.</a>
 				</p>
-			
+
 			</div>
 
 			<br/>
-			
+
 					{% endif %}
 
 			<p>
