@@ -9,25 +9,95 @@
 <main id="content" role="main">
 	{% include "includes/phase_banner_beta.html" %}
 
-	<dialog id="demoDialog">
-	  BOO
+	<dialog id="demoDialog" class="demoDialog">
+
+	<div class="dialog-box-highlight">
+			<div class="notice">
+					<i class="icon icon-important" style="float:left;">
+								<span class="visuallyhidden">Warning</span>
+					 </i>
+
+					  <strong class="heading-medium" id="dialog-title"> {{data.company}}
+					  has updated the deed</strong>
+
+			</div>
+
+	</div>
+
+			<!--a href="#" id="close" class="close"></a-->
+	    <div class="spacer_20"></div>
+
+					  <p>You will not be able to proceed further
+						  and will need to contact {{data.company}}.
+					  </p>
+
+
+		   <div class="spacer_20"></div>
+							 <a href="sign-my-mortgage" class="button" style="float:left;">Return to start page</a>
+		   <div class="spacer_20"></div>
+
+
 	</dialog>
 
-	<script>
-		(function() {
-	  var showModal = document.getElementById('showModal');
-	  var demoDialog = document.getElementById('demoDialog');
 
-	  // Update button opens a modal dialog
-	  showModal.addEventListener('click', function() {
-			demoDialog.showModal();
-	  });
+	<style>
 
-	  // setTimeout(function() {
-	  // 	demoDialog.showModal();
-	  // }, 4000)
-	})();
-	</script>
+	dialog {
+  position: fixed;
+  top: 50%;
+  transform: translate(0, -50%);
+	}
+
+.dialog-box-highlight {
+   /* margin: 1em 0 1em 0;
+    padding: 1em 0 1em 0;
+    margin:0.5em;
+    padding:0.5em;*/
+    padding:0.5em;
+    color: #fff;
+    background: #28a197;
+    text-align: left;
+
+}
+
+#dialog-title{
+
+    margin:15px 0;
+}
+
+
+
+.close {
+	   color: #aaaaaa;
+  position: absolute;
+   float: right;
+  right: 32px;
+  top: 32px;
+  width: 32px;
+  height: 32px;
+  opacity: 0.3;
+}
+.close:hover {
+  opacity: 1;
+}
+.close:before, .close:after {
+  position: absolute;
+  left: 15px;
+  content: ' ';
+  height: 33px;
+  width: 2px;
+  background-color: #333;
+}
+.close:before {
+  transform: rotate(45deg);
+}
+.close:after {
+  transform: rotate(-45deg);
+}
+
+
+
+	</style>
 
 	<div class="grid-row">
 		<div class="column-two-thirds">
@@ -104,5 +174,19 @@
   {{ super() }}
 
   <script src="/public/javascripts/dialog-trigger.js"></script>
+
+
+	<script>
+		(function() {
+	  // var demoDialog = document.getElementById('demoDialog');
+
+	  // dialogPolyfill.registerDialog(demoDialog);
+
+		// document.querySelector('#close').onclick = function() {
+		// 	demoDialog.close();
+  // 	};
+
+	})();
+	</script>
 
 {% endblock %}

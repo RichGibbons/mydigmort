@@ -156,7 +156,6 @@ router.get('/:type(user_research|future_sprints|current_sprint)/confirming-mortg
 global.dialog_id = false
 
 router.get('/dialog-trigger', function (req, res) {
-
   var showDialog = global.dialog_id
 
   if(showDialog) {
