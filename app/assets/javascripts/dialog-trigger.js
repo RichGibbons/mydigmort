@@ -6,5 +6,11 @@
         dialog.showModal()
       }
     })
+
+    $.getJSON('/redirect-trigger', function(data) {
+      if(data.redirect_destination) {
+        window.location = data.redirect_destination
+      }
+    })
   }, 1000);
 })()

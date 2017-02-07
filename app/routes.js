@@ -176,4 +176,28 @@ router.post('/dialog-trigger', function (req, res) {
   res.send(200)
 });
 
+// Redirect trigger route
+global.redirect_destination = false
+
+router.get('/redirect-trigger', function (req, res) {
+  var redirect_destination = global.redirect_destination
+
+  if(redirect_destination) {
+    global.redirect_destination = false
+  }
+
+  res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
+  res.header('Expires', '-1');
+  res.header('Pragma', 'no-cache');
+
+  res.json({
+    redirect_destination: redirect_destination
+  })
+});
+
+router.post('/redirect-trigger', function (req, res) {
+  global.redirect_destination = req.body.redirect_destination
+  res.send(200)
+});
+
 module.exports = router;
