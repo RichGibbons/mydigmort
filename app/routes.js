@@ -152,4 +152,52 @@ router.get('/:type(user_research|future_sprints|current_sprint)/confirming-mortg
 
 });
 
+// Dialog trigger route
+global.dialog_id = false
+
+router.get('/dialog-trigger', function (req, res) {
+  var showDialog = global.dialog_id
+
+  if(showDialog) {
+    global.dialog_id = false
+  }
+
+  res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
+  res.header('Expires', '-1');
+  res.header('Pragma', 'no-cache');
+
+  res.json({
+    dialog_id: showDialog
+  })
+});
+
+router.post('/dialog-trigger', function (req, res) {
+  global.dialog_id = req.body.dialog_id
+  res.send(200)
+});
+
+// Redirect trigger route
+global.redirect_destination = false
+
+router.get('/redirect-trigger', function (req, res) {
+  var redirect_destination = global.redirect_destination
+
+  if(redirect_destination) {
+    global.redirect_destination = false
+  }
+
+  res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
+  res.header('Expires', '-1');
+  res.header('Pragma', 'no-cache');
+
+  res.json({
+    redirect_destination: redirect_destination
+  })
+});
+
+router.post('/redirect-trigger', function (req, res) {
+  global.redirect_destination = req.body.redirect_destination
+  res.send(200)
+});
+
 module.exports = router;

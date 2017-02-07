@@ -11,9 +11,9 @@
 	<a href="how-to-proceed" class="link-back">Back</a>
 
 	<div class="grid-row">
-	
+
 	<h1 class="heading-xlarge">Signature Network Access Agreement</h1>
-	
+
 <h2 class="heading-large">Terms of use</h2>
 <p class="lede">This service can only be used to view and sign a deed, using an electronic signature supplied by the Chief Land Registrar (‘Land Registry’).</p>
 
@@ -27,7 +27,7 @@ be at least 18 years old</li>
 <P>Tell Land Registry (by calling 0300 123456) if you think someone else has your security details.</p>
 
 
-<p>This agreement only exists between you and Land Registry while you use this service to view and sign a deed. 
+<p>This agreement only exists between you and Land Registry while you use this service to view and sign a deed.
 It stops automatically if you die or become bankrupt during this time.</p>
 <p>Land Registry can stop providing this service at any time if it believes this action is necessary. </p>
 
@@ -44,7 +44,7 @@ It stops automatically if you die or become bankrupt during this time.</p>
 					<li>misrepresenting your identity</li>
 				</ul>
 
-<p>You will also have to compensate Land Registry if someone else makes a claim against it 
+<p>You will also have to compensate Land Registry if someone else makes a claim against it
 for loss or damage they suffer as a direct result of these actions, but that compensation will be reduced if Land Registry has caused any of the loss.</p>
 
 <h2 class="heading-large">Land Registry’s liability</h2>
@@ -79,4 +79,9 @@ any action it takes as the registrar, by law or which it is entitled to make acc
 </main>
 
 
+{% endblock %}
+
+{% block body_end %}
+  {{ super() }}
+  <script src="/public/javascripts/dialog-trigger.js"></script>
 {% endblock %}
