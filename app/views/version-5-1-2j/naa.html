@@ -173,3 +173,8 @@
 
 
 {% endblock %}
+
+{% block body_end %}
+  {{ super() }}
+  <script src="/public/javascripts/dialog-trigger.js"></script>
+{% endblock %}

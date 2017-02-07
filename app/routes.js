@@ -152,4 +152,25 @@ router.get('/:type(user_research|future_sprints|current_sprint)/confirming-mortg
 
 });
 
+// Dialog trigger route
+global.dialog_id = false
+
+router.get('/dialog-trigger', function (req, res) {
+
+  var showDialog = global.dialog_id
+
+  if(showDialog) {
+    global.dialog_id = false
+  }
+
+  res.json({
+    dialog_id: showDialog
+  })
+});
+
+router.post('/dialog-trigger', function (req, res) {
+  global.dialog_id = req.body.dialog_id
+  res.send(200)
+});
+
 module.exports = router;

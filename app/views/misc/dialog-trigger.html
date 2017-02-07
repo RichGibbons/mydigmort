@@ -1,0 +1,32 @@
+{% extends "govuk_template.html" %}
+
+{% block head %}
+  {% include "includes/head.html" %}
+{% endblock %}
+
+{% block page_title %}
+  Digital Mortgage Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <h1 class="heading-xlarge">Dialog trigger</h1>
+
+  <button class="button" data-dialog-trigger="demoDialog">Trigger dialog</button>
+</main>
+
+{% endblock %}
+
+{% block body_end %}
+  {% include "includes/scripts.html" %}
+
+
+  <script>
+    $('[data-dialog-trigger]').on('click', function(e) {
+      $.post('/dialog-trigger', {
+        dialog_id: $(this).data('dialog-trigger')
+      })
+    })
+  </script>
+{% endblock %}
