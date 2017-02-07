@@ -163,6 +163,10 @@ router.get('/dialog-trigger', function (req, res) {
     global.dialog_id = false
   }
 
+  res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
+  res.header('Expires', '-1');
+  res.header('Pragma', 'no-cache');
+
   res.json({
     dialog_id: showDialog
   })
