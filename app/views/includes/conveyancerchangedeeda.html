@@ -1,0 +1,127 @@
+
+		<!-- Dialog container for site not mobile friendly yet -->
+					
+						
+
+  
+
+<button id="opBtn">Dialog (this will be replaced by timer function)</button>
+
+<div id="dialoga" class="modal">
+  <div class="modal-content">
+ 
+      
+      
+      						<h2 id="dialog-title" class="heading-medium"> {{data.company}}  has just updated the content of the deed. You will need to start the process again.</h1>
+											
+														  <p>You will not be able to proceed further in the application 
+															  and will need to contact {{data.company}}.
+														  </p>
+											 
+											  
+											   <div class="spacer_20"></div>
+																 <a href="sign-my-mortgage" class="button" style="float:left;">Return to start page</a>
+													 <div class="spacer_20"></div>
+    
+  </div>
+
+</div>
+				
+				
+				
+				
+				
+				
+				
+				
+
+<style>
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+
+
+
+
+
+.modal-content {
+	 position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+   width: 50%;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px 50px 20px 20px;
+    border: 1px solid #888;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+ 
+}
+
+
+.dialog.closed {
+ 
+  display: none;
+
+}
+
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+
+.close {
+    color: #000;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+
+</style>
+
+
+<script>
+
+var modal = document.getElementById('dialoga');
+var btn = document.getElementById("opBtn"); // open modal replace with settimer function
+var span = document.getElementsByClassName("close")[0];
+
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+</script>
+ 
