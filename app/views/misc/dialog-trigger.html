@@ -12,12 +12,25 @@
 
 <main id="content" role="main">
   <h1 class="heading-xlarge">Dialog trigger</h1>
+  
+  <h2> Name Change </h2>
+  <button class="button" data-dialog-trigger="variant-1">Variant1</button>
+  <p></p>
+  <h2> DOB / Address Change </h2>
+  <button class="button" data-dialog-trigger="variant-2">Variant2</button>
+   <p></p>
+  <h2>View overruled by variant 1,2</h2>
+  <button class="button" data-dialog-trigger="variant-3">Variant3</button>
 
-  <button class="button" data-dialog-trigger="demoDialog">Trigger dialog</button>
-
-  <br><br>
-
-  <button class="button" data-redirect-trigger="/version-5-1-2j/terms">Trigger redirect to /version-5-1-2j/terms</button>
+    <p></p>
+<h2> Name Change </h2>
+  <button class="button" data-redirect-trigger="/version-5-1-2j/Update-mortgage-deed1">Update-mortgage-deed1</button>
+  <p></p>
+    <h2> DOB / Address Change </h2>
+  <button class="button" data-redirect-trigger="/version-5-1-2j/Update-mortgage-deed2">Update-mortgage-deed2</button>
+    <p></p>
+   <h2>View overruled by variant 1,2</h2>
+  <button class="button" data-redirect-trigger="/version-5-1-2j/Update-mortgage-deed3">Update-mortgage-deed3</button>
 </main>
 
 {% endblock %}
