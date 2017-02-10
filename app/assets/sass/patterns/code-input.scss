@@ -11,7 +11,6 @@ $code-input-spacing: 2em;
     border: 0;
     font-family: inherit;
     letter-spacing: inherit;
-    width: 1000px;
     font-size: inherit;
     padding-bottom: 12px;
     position: relative;
@@ -34,6 +33,7 @@ $code-input-spacing: 2em;
     margin-top: -10px;
     position: relative;
     z-index: 1;
+    white-space: nowrap;
   }
 
   .dash,
