@@ -42,21 +42,69 @@
 												<div class="form-group">
 													<label class="heading-medium" for="auth_code">
 														 Enter your authentication code
-														<span class="form-hint" >Complete the signing of your mortgage deed by entering the 6-digit authentication code for example 'C6E78A'</span>
+														<span class="form-hint" >Complete the signing of your mortgage deed by entering the authentication code for example 'C6E78A'</span>
 													</label>
-													<!--input type="text" class="form-control" id="auth_code" name="auth_code"-->
-												<br/>
-													<input type="text" class="form-control" id="auth_code" name="auth_code" placeholder="*" style="text-align:center; margin: 5px; width:5%;border-bottom: 2px solid #6f777b; border-top: 0px solid #6f777b; border-right: 0px solid #6f777b;border-left: 0px solid #6f777b; -webkit-appearance: none;border-radius: 0;-webkit-border-radius">
-													<input type="text" class="form-control" id="auth_code" name="auth_code" placeholder="*" style="text-align:center; margin: 5px; width:5%;border-bottom: 2px solid #6f777b; border-top: 0px solid #6f777b; border-right: 0px solid #6f777b;border-left: 0px solid #6f777b; -webkit-appearance: none;border-radius: 0;
-													-webkit-border-radius">
-													<input type="text" class="form-control" id="auth_code" name="auth_code" placeholder="*" style="text-align:center; margin: 5px; width:5%;border-bottom: 2px solid #6f777b; border-top: 0px solid #6f777b;
-													border-right: 0px solid #6f777b;border-left: 0px solid #6f777b; -webkit-appearance: none;-webkit-border-radius">
+													
+													
+													{% if session.code_input == 'hashes-single' %}
 
-													<input type="text" class="form-control" id="auth_code" name="auth_code" placeholder="*" style="text-align:center; margin: 5px; width:5%;border-bottom: 2px solid #6f777b; border-top: 0px solid #6f777b; border-right: 0px solid #6f777b;border-left: 0px solid #6f777b; -webkit-appearance: none;border-radius: 0;-webkit-border-radius">
-													<input type="text" class="form-control" id="auth_code" name="auth_code" placeholder="*" style="text-align:center; margin: 5px; width:5%;border-bottom: 2px solid #6f777b; border-top: 0px solid #6f777b; border-right: 0px solid #6f777b;border-left: 0px solid #6f777b; -webkit-appearance: none;border-radius: 0;-webkit-border-radius">
-													<input type="text" class="form-control" id="auth_code" name="auth_code" placeholder="*" style="text-align:center; margin: 5px; width:5%;border-bottom: 2px solid #6f777b; border-top: 0px solid #6f777b; border-right: 0px solid #6f777b;border-left: 0px solid #6f777b; -webkit-appearance: none;border-radius: 0;-webkit-border-radius">
-													<br/>
-													<br/>
+															<div class="code-input">
+																<input type="text" class="form-control" id="auth_code" name="auth_code" size="6" maxlength="6" placeholder="######" spellcheck="false">
+																<span class="mask">
+																	<span class="dash"></span>
+																	<span class="dash"></span>
+																	<span class="dash"></span>
+																	<span class="dash"></span>
+																	<span class="dash"></span>
+																	<span class="dash"></span>
+																</span>
+															</div>
+
+														{% elseif session.code_input == 'hashes-double' %}
+
+															<div class="code-input code-input-spaced">
+																<input type="text" class="form-control" id="auth_code" name="auth_code" size="7" maxlength="7" placeholder="### ###" spellcheck="false">
+																<span class="mask">
+																	<span class="dash"></span>
+																	<span class="dash"></span>
+																	<span class="dash"></span>
+																	<span class="space"></span>
+																	<span class="dash"></span>
+																	<span class="dash"></span>
+																	<span class="dash"></span>
+																</span>
+															</div>
+
+														{% elseif session.code_input == 'asterisks-double' %}
+
+															<div class="code-input code-input-spaed">
+																<input type="text" class="form-control" id="auth_code" name="auth_code" size="7" maxlength="7" placeholder="*** ***" spellcheck="false">
+																<span class="mask">
+																	<span class="dash"></span>
+																	<span class="dash"></span>
+																	<span class="dash"></span>
+																	<span class="space"></span>
+																	<span class="dash"></span>
+																	<span class="dash"></span>
+																	<span class="dash"></span>
+																</span>
+															</div>
+
+														{% else %}
+
+															<div class="code-input">
+																<input type="text" class="form-control" id="auth_code" name="auth_code" size="6" maxlength="6" placeholder="******" spellcheck="false">
+																<span class="mask">
+																	<span class="dash"></span>
+																	<span class="dash"></span>
+																	<span class="dash"></span>
+																	<span class="dash"></span>
+																	<span class="dash"></span>
+																	<span class="dash"></span>
+																</span>
+															</div>
+
+														{% endif %}
 
 												</fieldset>
 

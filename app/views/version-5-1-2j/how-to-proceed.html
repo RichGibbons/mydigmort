@@ -209,11 +209,11 @@
 
 								{% endif %}
 
-								 your mortgage deed by agreeing Land Registry's terms and conditions for this service</h3>
+								 your mortgage deed by agreeing Land Registry's terms of use for this service</h3>
 								 <div class="form-group">
 									<label class="block-label" for="terms">
 										<input id="terms" name="session[terms]" type="checkbox" value="terms"{% if session.terms%} john{% endif %}>
-										I agree to the terms and conditions set out in the <a href="naab">Network Access Agreement</a>
+										I agree to the terms of use set out in the <a href="naab">Network Access Agreement</a>
 									</label>
 								</div>
 								<div class="spacer_20"></div>
@@ -293,7 +293,7 @@
 
 		var button = $('#btn');
 		var terms = $('#terms');
-		var message = $('<p class="error">Please <a href="#naa-agree">indicate that you agree</a> to the terms and conditions set out in the Network Access Agreement</p>');
+		var message = $('<p class="error">Please <a href="#naa-agree">indicate that you agree</a> to the terms of use set out in the Network Access Agreement</p>');
 
 		message.find('a').on('click', function(e) {
 			e.preventDefault();
