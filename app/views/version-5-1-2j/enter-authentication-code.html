@@ -47,7 +47,7 @@
 														{% if session.code_input == 'hashes-single' %}
 
 															<div class="code-input">
-																<input type="text" class="form-control" id="auth_code" name="auth_code" size="6" maxlength="6" placeholder="######" spellcheck="false">
+																<input type="text" class="form-control" id="auth_code" name="auth_code" size="6" autocomplete="off" autocorrect="off" autocapitalize="off" maxlength="6" placeholder="######" spellcheck="false">
 																<span class="mask">
 																	<span class="dash"></span>
 																	<span class="dash"></span>
@@ -61,7 +61,7 @@
 														{% elseif session.code_input == 'hashes-double' %}
 
 															<div class="code-input code-input-spaced">
-																<input type="text" class="form-control" id="auth_code" name="auth_code" size="7" maxlength="7" placeholder="### ###" spellcheck="false">
+																<input type="text" class="form-control" id="auth_code" name="auth_code" size="7" autocomplete="off" autocorrect="off" autocapitalize="off" maxlength="7" placeholder="### ###" spellcheck="false">
 																<span class="mask">
 																	<span class="dash"></span>
 																	<span class="dash"></span>
@@ -76,7 +76,7 @@
 														{% elseif session.code_input == 'asterisks-double' %}
 
 															<div class="code-input code-input-spaed">
-																<input type="text" class="form-control" id="auth_code" name="auth_code" size="7" maxlength="7" placeholder="*** ***" spellcheck="false">
+																<input type="text" class="form-control" id="auth_code" name="auth_code" size="7" autocomplete="off" autocorrect="off" autocapitalize="off" maxlength="7" placeholder="*** ***" spellcheck="false">
 																<span class="mask">
 																	<span class="dash"></span>
 																	<span class="dash"></span>
@@ -91,7 +91,7 @@
 														{% else %}
 
 															<div class="code-input">
-																<input type="text" class="form-control" id="auth_code" name="auth_code" size="6" maxlength="6" placeholder="******" spellcheck="false">
+																<input type="text" class="form-control" id="auth_code" name="auth_code" size="6" autocomplete="off" autocorrect="off" autocapitalize="off" maxlength="6" placeholder="******" spellcheck="false">
 																<span class="mask">
 																	<span class="dash"></span>
 																	<span class="dash"></span>
