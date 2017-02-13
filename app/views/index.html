@@ -2,6 +2,15 @@
 
 {% block head %}
   {% include "includes/head.html" %}
+
+  <style type="text/css">
+  	.header-wrapper,
+  	#content,
+  	#global-header-bar {
+  		max-width: 80%!important;
+  		padding: 0 30px;
+  	}
+  </style>
 {% endblock %}
 
 {% block page_title %}
@@ -47,45 +56,45 @@
 
 	<table class="custom_1">
 		<tr>
-			<th width="12%" class="table_text_black">Version</th>
-			<th width="10%" class="table_text_black">Date</th>
-			<th width="30%" class="table_text_black">What's new</th>
-			<th width="40%" class="table_text_black">What's changed</th>
+			<th width="20%" class="table_text_black">Version</th>
+			<th width="5%" class="table_text_black">Date</th>
+			<th width="25%" class="table_text_black">What's new</th>
+			<th width="50%" class="table_text_black">What's changed</th>
 		</tr>
-
-
 
 		<tr>
 			<td style="vertical-align: top">
 				<h2 class="bold-xsmall">v5.1.2j</h2>
 				<br/>
 				<h3 class="bold-xsmall"> Multiple Borrowers </h3>
-				<a href="/version-5-1-2j/sign-my-mortgage?session[mode]=first&session[code_input]=asterisks-single">First - User signs up for verify - User Signs Mortgage Deed.</a><br><br>
-				<a href="/version-5-1-2j/sign-my-mortgage?session[mode]=second&session[code_input]=asterisks-single">Second - Existing Verify user - User views Mortgage deed.</a><br><br>
+				<a href="/version-5-1-2j/sign-my-mortgage?session[mode]=first&session[code_input]=asterisks-single&session[verify]=true">First - User signs up for verify - User Signs Mortgage Deed.</a><br><br>
+				<a href="/version-5-1-2j/sign-my-mortgage?session[mode]=second&session[code_input]=asterisks-single&session[verify]=true">Second - Existing Verify user - User views Mortgage deed.</a><br><br>
 				<h3 class="bold-xsmall"> Single Borrowers </h3>
-				<a href="/version-5-1-2j/sign-my-mortgage?session[mode]=something-else&session[code_input]=asterisks-single">First - User signs up for verify - User signs Mortgage Deed.</a><br><br>
-				<a href="/version-5-1-2j/sign-my-mortgage?session[mode]=fourth-test&session[code_input]=asterisks-single">Second  - Existing Verify user - User views Mortgage deed.</a><br><br>
+				<a href="/version-5-1-2j/sign-my-mortgage?session[mode]=something-else&session[code_input]=asterisks-single&session[verify]=true">First - User signs up for verify - User signs Mortgage Deed.</a><br><br>
+				<a href="/version-5-1-2j/sign-my-mortgage?session[mode]=fourth-test&session[code_input]=asterisks-single&session[verify]=true">Second  - Existing Verify user - User views Mortgage deed.</a><br><br>
 				<h3 class="bold-xsmall"> What happens when </h3>
-				<a href="/version-5-1-2j/sign-my-mortgage?session[mode]=fifth-effective&session[code_input]=asterisks-single">Deed made effective - Single Borrower</a>
+				<a href="/version-5-1-2j/sign-my-mortgage?session[mode]=fifth-effective&session[code_input]=asterisks-single&session[verify]=true">Deed made effective - Single Borrower</a>
 				<br><br>
-				<a href="/version-5-1-2j/sign-my-mortgage?session[mode]=sixth-effective&session[code_input]=asterisks-single">Deed made effective - Multiple Borrowers</a>
+				<a href="/version-5-1-2j/sign-my-mortgage?session[mode]=sixth-effective&session[code_input]=asterisks-single&session[verify]=true">Deed made effective - Multiple Borrowers</a>
+				<br><br>
+				<a href="/version-5-1-2j/sign-my-mortgage?session[mode]=first&session[code_input]=asterisks-single&session[verify]=non-exact-match">Verify - non exact match</a>
 				<br><br>
 				<h3 class="bold-xsmall"> Authentication code inputs</h3>
-				<a href="/version-5-1-2j/sign-my-mortgage?session[mode]=first&session[code_input]=asterisks-single">Asterisks, single field</a>
+				<a href="/version-5-1-2j/sign-my-mortgage?session[mode]=first&session[code_input]=asterisks-single&session[verify]=true">Asterisks, single field</a>
 				<br><br>
-				<a href="/version-5-1-2j/sign-my-mortgage?session[mode]=first&session[code_input]=asterisks-double">Asterisks, double field</a>
+				<a href="/version-5-1-2j/sign-my-mortgage?session[mode]=first&session[code_input]=asterisks-double&session[verify]=true">Asterisks, double field</a>
 				<br><br>
-				<a href="/version-5-1-2j/sign-my-mortgage?session[mode]=first&session[code_input]=hashes-single">Hashes, single field</a>
+				<a href="/version-5-1-2j/sign-my-mortgage?session[mode]=first&session[code_input]=hashes-single&session[verify]=true">Hashes, single field</a>
 				<br><br>
-				<a href="/version-5-1-2j/sign-my-mortgage?session[mode]=first&session[code_input]=hashes-double">Hashes, double field</a>
+				<a href="/version-5-1-2j/sign-my-mortgage?session[mode]=first&session[code_input]=hashes-double&session[verify]=true">Hashes, double field</a>
 				<!--a href="/version-5-1-2i/sign-my-mortgage?session[mode]=Borrower-Reference-a">Borrower Reference - Single Borrower</a-->
 				<br><br>
 			</td>
 				<td valign="top"></td>
 			<td valign="top">
-			<li> Updates - Following research findings for January 20th Lab, US397, GDS kit prototype kit upgrade, functionality to activate dialog 
+			<li> Updates - Following research findings for January 20th Lab, US397, GDS kit prototype kit upgrade, functionality to activate dialog
 			/ inpage response for research labs, Borrower reference journey if inperfect match is created</li>
-			
+
 
 
 

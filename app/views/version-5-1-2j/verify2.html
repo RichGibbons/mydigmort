@@ -120,9 +120,11 @@
 				<p>It’s secure, and stops someone pretending to be you.</p>
 
 				<div class="actions">
-					<a class="button button-action next" href="how-to-proceed">
-						Continue
-					</a>
+					{% if session['verify'] == 'non-exact-match' %}
+						<a class="button button-action next" href="borrower-reference.html">Continue</a>
+					{% else %}
+						<a class="button button-action next" href="how-to-proceed">Continue</a>
+					{% endif %}
 				</div>
 
 				<script src="/public/javascripts/intro.js"></script>
