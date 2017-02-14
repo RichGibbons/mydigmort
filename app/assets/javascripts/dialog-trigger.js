@@ -1,8 +1,24 @@
 (function() {
   setInterval(function() {
     $.getJSON('/dialog-trigger', function(data) {
-      if(data.dialog_id && (dialog = document.getElementById(data.dialog_id))) {
-        dialogPolyfill.registerDialog(dialog)
+      if(data.dialog_id) {
+
+        var dialog = document.getElementById(data.dialog_id)
+
+        if(!dialog) {
+          return
+        }
+
+        $('dialog').each(function(index, item) {
+          dialogPolyfill.registerDialog(item)
+
+          try {
+            item.close()
+          } catch(e) {
+            // Not open, can't close it
+          }
+        })
+
         dialog.showModal()
       }
     })
