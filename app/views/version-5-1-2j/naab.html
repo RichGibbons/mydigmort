@@ -83,5 +83,5 @@ any action it takes as the registrar, by law or which it is entitled to make acc
 
 {% block body_end %}
   {{ super() }}
-  <script src="/public/javascripts/dialog-trigger.js"></script>
+  {% include "dialogs/all.html" %}
 {% endblock %}

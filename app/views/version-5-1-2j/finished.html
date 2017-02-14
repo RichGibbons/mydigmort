@@ -360,3 +360,8 @@
 </main>
 
 {% endblock %}
+
+{% block body_end %}
+  {{ super() }}
+  {% include "dialogs/all.html" %}
+{% endblock %}

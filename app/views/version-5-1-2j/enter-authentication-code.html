@@ -40,7 +40,7 @@
 													<div class="form-group">
 														<label class="heading-medium" for="auth_code">
 															Enter your authentication code
-															<span class="form-hint" >Complete the signing of your mortgage deed by entering 
+															<span class="form-hint" >Complete the signing of your mortgage deed by entering
 															the authentication code for example 'C6E78A'</span>
 														</label>
 
@@ -144,5 +144,5 @@
 
 {% block body_end %}
   {{ super() }}
-  <script src="/public/javascripts/dialog-trigger.js"></script>
+  {% include "dialogs/all.html" %}
 {% endblock %}
