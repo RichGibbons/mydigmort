@@ -44,8 +44,8 @@
 														 Enter your authentication code
 														<span class="form-hint" >Complete the signing of your mortgage deed by entering the authentication code for example 'C6E78A'</span>
 													</label>
-													
-													
+
+
 													{% if session.code_input == 'hashes-single' %}
 
 															<div class="code-input">
@@ -142,5 +142,5 @@
 
 {% block body_end %}
   {{ super() }}
-  <script src="/public/javascripts/dialog-trigger.js"></script>
+  {% include "dialogs/all.html" %}
 {% endblock %}

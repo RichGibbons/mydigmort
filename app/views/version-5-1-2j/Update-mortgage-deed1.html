@@ -10,7 +10,7 @@
   {% include "includes/phase_banner_beta.html" %}
 <!-- Only used if conveyancer alters name change overrules variant 3 -->
 	<div class="grid-row">
-	
+
 				<div class="column-two-thirds">
 				    <div class="spacer_20"></div>
 				        <div class="spacer_20"></div>
@@ -19,30 +19,30 @@
 												<i class="icon icon-important" style="float:left;">
 															<span class="visuallyhidden">Warning</span>
 												 </i>
-												 
-												  <strong class="heading-medium" id="dialog-title"> {{data.company}}  
+
+												  <strong class="heading-medium" id="dialog-title"> {{data.company}}
 												  has updated the deed</strong>
 								</div>
 							</div>
-					
+
 						<!--a href="#" id="close" class="close"></a-->
 					    <div class="spacer_20"></div>
-															
+
 									   <p>You will need to contact {{data.company}}.
           </p>
 
-						 
-															  
+
+
 						   <div class="spacer_20"></div>
 											 <a href="sign-my-mortgage" class="button" style="float:left;">Start again</a>
-						   <div class="spacer_20"></div> 
-				
-					
-					
-				
-    	
+						   <div class="spacer_20"></div>
+
+
+
+
+
   </div>
-  
+
   <style>
   .a-box-highlight {
     color: #fff;
@@ -56,14 +56,19 @@
     margin:30px 0;
 }
 
-	.notice-title { 
+	.notice-title {
 	margin: 0em;
 	padding: 0.5em;
-	} 
+	}
 
 </style>
-  
-  
+
+
 </main>
 
+{% endblock %}
+
+{% block body_end %}
+  {{ super() }}
+  {% include "dialogs/all.html" %}
 {% endblock %}
