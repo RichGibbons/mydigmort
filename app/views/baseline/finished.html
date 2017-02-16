@@ -82,7 +82,7 @@
 
 					<ul class="list list-bullet">
 
-						{% if session.mode == 'first' or session.mode == 'second' %}
+						{% if session.mode == 'first'  %}
 						<li>
 
 								<span> {{data.mname}}</span>
@@ -91,31 +91,11 @@
 					    {% endif %}
 
 
-					    
-					    {% if session.mode == 'first' %}
-					   <li> As you are borrowing money with other people, they will also need to sign the
-mortgage deed</li>
-					   {% endif %}
-					    
-					
-					   
-					    
-					    {% if session.mode == 'something-else' or session.mode == 'fourth-test' %}
-					     <li>
-					    {{data.company}} will be notified so that they can continue to do the legal work
-needed for your mortgage
-	    </li>
-					    {% endif %}
-				
 
 
-						
-						
-						{% if session.mode == 'first' or session.mode == 'second' %}
-							<li>
+						<li>
+
 						Once
-						
-						{% endif %}
 
 						{% if session.mode == 'first'  %}
 						 all  borrowers
@@ -125,9 +105,18 @@ needed for your mortgage
 						  all  borrowers
 						{% endif %}
 
-						{% if session.mode == 'first' or session.mode == 'second' %}
-						have signed the mortgage deed,
+
+						{% if session.mode == 'something-else'  %}
+					     you
 						{% endif %}
+
+						{% if session.mode == 'fourth-test'  %}
+						you
+						{% endif %}
+
+
+						have signed the mortgage deed,
+
 
 						{% if session.mode == 'first'  %}
 						{{data.company}}
@@ -138,11 +127,19 @@ needed for your mortgage
 						{% endif %}
 
 
-						{% if session.mode == 'first' or session.mode == 'second' %}
-						will be notified so that they can continue to do the legal work needed for your mortgage
-						</li>
+
+						{% if session.mode == 'something-else'  %}
+						{{data.company}}
 						{% endif %}
-						
+
+						{% if session.mode == 'fourth-test' %}
+						{{data.companyb}}
+						{% endif %}
+
+
+
+						will be notified so that they can continue to do the legal work
+						</li>
 
 
 						<li>
