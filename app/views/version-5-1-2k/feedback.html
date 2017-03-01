@@ -1,0 +1,108 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  View your mortgage deed
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	{% include "includes/phase_banner_beta.html" %}
+
+	<div class="grid-row">
+		<div class="column-two-thirds">
+
+		<h1 class="heading-xlarge">Feedback</h1>
+
+  <div class="article-container group">
+
+
+    <div class="content-block">
+      <div class="inner">
+
+
+
+    <div class="satisfaction-survey">
+
+
+      <form class="contact-form" action="/contact/govuk/service-feedback" method="post" id="completed-transaction-form">
+        <input type="hidden" id="service_slug" name="service_feedback[slug]" value="search-property-information-land-registry">
+        <input type="hidden" id="service_done_page_url" name="service_feedback[url]" value="https://www.gov.uk/done/search-property-information-land-registry">
+        <fieldset>
+          <legend><h2>How did you feel about the service you received today?</h2></legend>
+          <br>
+          <input type="radio" required name="service_feedback[service_satisfaction_rating]" id="very-satisfied" value="5">
+          <label for="very-satisfied">Very satisfied</label>
+          <br>
+          <input type="radio" required name="service_feedback[service_satisfaction_rating]" id="satisfied" value="4">
+          <label for="satisfied">Satisfied</label>
+          <br>
+          <input type="radio" required name="service_feedback[service_satisfaction_rating]" id="neither-satisfied-or-dissatisfied" value="3">
+          <label for="neither-satisfied-or-dissatisfied">Neither satisfied or dissatisfied</label>
+          <br>
+          <input type="radio" required name="service_feedback[service_satisfaction_rating]" id="dissatisfied" value="2">
+          <label for="dissatisfied">Dissatisfied</label>
+          <br>
+          <input type="radio" required name="service_feedback[service_satisfaction_rating]" id="very-dissatisfied" value="1">
+          <label for="very-dissatisfied">Very dissatisfied</label>
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+          <legend><h2>How could we improve this service?</h2></legend>
+          <br>
+          <label for="improvement-comments" class="visuallyhidden">Your comments</label>
+          <textarea name="service_feedback[improvement_comments]" class="full-size counted" id="improvement-comments">
+          </textarea>
+           <p id="improvement-commentscounter" class="hint" aria-live="polite" aria-atomic="false">(Limit is 1200 characters)</p>
+
+          <div id="transaction-completed-form-notice">
+            <p>Please don't include any personal or financial information, for example your Passport, Driving License, National Insurance or credit card numbers.</p>
+          </div>
+        </fieldset>
+        <br>
+        <p class="action group">
+          <button type="submit" class="button">Send feedback</button>
+        </p>
+      </form>
+    </div>
+
+
+      </div>
+    </div>
+    <div class="meta-data group">
+    <p class="modified-date">Last updated: 12 December 2016</p>
+</div>
+
+
+
+  </div>
+</main>
+
+
+{% endblock %}
+
+{% block body_end %}
+  {{ super() }}
+
+<script>
+
+		var button = $('#btn');
+		var terms = $('#terms')
+
+		button.attr('disabled', 'disabled');
+
+		terms.on('change', function(e) {
+			if(terms.is(':checked')) {
+				button.removeAttr('disabled');
+			} else {
+				button.attr('disabled', 'disabled');
+			}
+		});
+
+
+	</script>
+
+  {% include "dialogs/all.html" %}
+{% endblock %}

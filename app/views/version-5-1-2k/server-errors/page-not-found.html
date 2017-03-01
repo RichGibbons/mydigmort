@@ -1,0 +1,54 @@
+{% extends "govuk_template.html" %}
+
+{% block head %}
+  {% include "includes/head.html" %}
+{% endblock %}
+
+{% block proposition_header %}
+  {% include "includes/propositional_navigation.html" %}
+{% endblock %}
+
+{% block header_class %}
+  with-proposition
+{% endblock %}
+
+{% block page_title %}
+  Your session has timed out
+{% endblock %}
+
+{% block content %}
+
+<main id="wrapper" role="main">
+
+  <div id="content">
+    {% include "includes/phase_banner_beta.html" %}
+
+    <div class="inner-block">
+
+      	<h1 class="heading-xlarge">This page cannot be found</h1>
+
+		    <p class="text">
+            We could not find the page you requested. This could be because the address was mistyped, 
+            or a link you followed was pointing at a page that no longer exists.</p>
+            
+             <p class="text">
+              If you are here to view your mortgage then please <a href="../sign-my-mortgage">
+              start from the beginning</a>
+             </p>
+            
+            <p class="text">
+		    Please report any broken links by  
+		    <a href="http://landregistry.custhelp.com/app/contactus_general/">contacting us</a>
+        </p>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}
+
+{% block body_end %}
+  {% include "includes/scripts.html" %}
+{% endblock %}
