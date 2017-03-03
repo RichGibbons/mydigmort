@@ -216,7 +216,6 @@
 										I agree to the terms of use set out in the <a href="naab">Network Access Agreement</a>
 									</label>
 								</div>
-								<div class="spacer_20"></div>
 							</div>
 						</li>
 
@@ -232,14 +231,14 @@
 							 <div class="spacer_20"></div>
 							 <a href="exit" class="button" style="float:left;">Finish</a>
 
-						 <div class="spacer_20"></div>
+						 
 
 
 			{% else %}
 
 
 
-				<div class="spacer_20"></div>
+				
 				<button class="button" id="btn">Continue</button>
 
 
@@ -253,7 +252,7 @@
 
 		<div class="column-one-third">
 			{% if (session.mode == 'fifth-effective' or session.mode == 'sixth-effective') %}
-								<div class="spacer_20"></div>
+							
 
 
 			{% else %}
@@ -293,7 +292,7 @@
 
 		var button = $('#btn');
 		var terms = $('#terms');
-		var message = $('<p class="error">Please <a href="#naa-agree">indicate that you agree</a> to the terms of use set out in the Network Access Agreement</p>');
+		var message = $('<p class="error" style="color:#b10e1e">Please indicate that you agree to the terms of use set out in the Network Access Agreement</p>');
 
 		message.find('a').on('click', function(e) {
 			e.preventDefault();
