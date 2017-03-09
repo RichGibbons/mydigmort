@@ -200,20 +200,11 @@
 							<div>
 								<h3 class="heading-small">
 
-								{% if session.mode == 'something-else' or session.mode == 'first' %}
-								Sign
-
-								{% else %}
-
-								View
-
-								{% endif %}
-
-								 your mortgage deed by agreeing Land Registry's terms of use for this service</h3>
+							 You must read and accept the terms of use to continue.</h3>
 								 <div class="form-group">
 									<label class="block-label" for="terms">
 										<input id="terms" name="session[terms]" type="checkbox" value="terms"{% if session.terms%} john{% endif %}>
-										I agree to the terms of use set out in the <a href="naab">Network Access Agreement</a>
+										 I have read and accept Land Registry’s <a href="naab">terms of use</a>for this service.
 									</label>
 								</div>
 							</div>
