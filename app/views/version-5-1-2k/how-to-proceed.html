@@ -225,7 +225,7 @@
 			{% else %}
 
 				
-				<button class="button" id="btn">Continue</button>
+				<button class="button" id="btn" >Continue</button>
 
 
 
@@ -278,7 +278,7 @@
 
 		var button = $('#btn');
 		var terms = $('#terms');
-		var message = $('<p class="error" style="color:#b10e1e">Please read and accept the Land Registry&#39;s terms of use.</p>');
+		var message = $('<p role="alert" class="error-message">Please read and accept the Land Registry&#39;s terms of use.</p>');
 
 		message.find('a').on('click', function(e) {
 			e.preventDefault();
@@ -295,9 +295,9 @@
 
 		function updateButton() {
 			if(terms.is(':checked')) {
-				button.removeClass('button-disabled');
+				button.removeAttr('disabled');
 			} else {
-				button.addClass('button-disabled');
+				button.attr('disabled', true);
 			}
 		}
 
@@ -307,7 +307,7 @@
 				message.remove()
 			} else {
 				terms.closest('.form-group').addClass('error');
-				button.before(message);
+				terms.closest('.form-group').append(message);
 			}
 		}
 
