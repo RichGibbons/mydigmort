@@ -49,7 +49,10 @@
 								<h3 class="heading-medium">Borrower</h3>
 
 								<ul>
-									
+								
+								
+								
+								
 									 {% if session.mode == 'first' or session.mode == 'second' %}
 								
 									<li class="bold-small">Peter Smith</li>
@@ -60,6 +63,8 @@
 									<li class="bold-small">Ann Smith</li>
 									
 									 {% endif %}
+									
+									
 								</ul>
 
 								<h3 class="heading-medium">Charging clause</h3>
@@ -117,7 +122,6 @@
 									<p> <span class="font-medium"> Signed by </span>
 									<span class="font-medium" style="font-weight:bold"> Ann Smith </span></p>
 									{% endif %}
-
 
 									<!-- <div class="deed-form-ref deed-document--divider"> -->
 							<div class="deed-form-ref">
