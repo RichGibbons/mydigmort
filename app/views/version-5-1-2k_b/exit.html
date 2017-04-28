@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Mortgage Deed viewed
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+	<div class="grid-row">
+
+				<div class="column-two-thirds">
+					<div class="govuk-box-highlight">
+						<h1 class="bold-large">
+					Thank you for viewing your mortgage deed you have successfully signed out
+						{% if session.mode == 'first'%}
+					  {{data.fname}}
+							{% endif %}
+
+							{% if session.mode == 'second' %}
+					  {{data.fname}}
+							{% endif %}
+
+							{% if session.mode == 'something-else' %}
+					  {{data.fname}}
+							{% endif %}
+
+								{% if session.mode == 'fourth-test' %}
+					  {{data.fname}}
+							{% endif %}
+
+							{% if session.mode == 'fifth-effective' or session.mode == 'sixth-effective' %}
+							 {{data.fname}}
+							{% endif %} !
+
+
+
+
+
+
+					</h1>
+				  </div>
+
+				  <br><br>
+					<p>
+					{% if session.mode == 'second' %}
+						<a href="/version-5-1-2i/sign-my-mortgage?session[mode]=second">
+					{% elseif session.mode == 'fourth-test' %}
+						<a href="/version-5-1-2i/sign-my-mortgage?session[mode]=fourth-test">
+						Didn't want to sign out? Sign in here!</a></p>
+					{% endif %}
+
+
+					<br><br>
+					<p><a href="https://www.gov.uk/">Return to GOV.UK</a></p>
+					</div>
+    </div><!-- column-two-thirds -->
+
+  </div>
+</main>
+
+{% endblock %}
+
+{% block body_end %}
+  {{ super() }}
+  {% include "dialogs/all.html" %}
+{% endblock %}

@@ -1,0 +1,210 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Confirming your mortgage
+{% endblock %}
+
+{% block content %}
+
+<main id="wrapper" role="main">
+
+
+<style>
+
+#circleindicator{
+	position:relative;
+	/*width:234px;*/
+	height:28px;
+	margin:auto;
+}
+
+.circleindicator{
+	position:absolute;
+	top:0;
+	background-color:rgb(0,0,0);
+	width:25px;
+	height:25px;
+	animation-name:bounce_circleindicator;
+		-o-animation-name:bounce_circleindicator;
+		-ms-animation-name:bounce_circleindicator;
+		-webkit-animation-name:bounce_circleindicator;
+		-moz-animation-name:bounce_circleindicator;
+	animation-duration:1.5s;
+		-o-animation-duration:1.5s;
+		-ms-animation-duration:1.5s;
+		-webkit-animation-duration:1.5s;
+		-moz-animation-duration:1.5s;
+	animation-iteration-count:infinite;
+		-o-animation-iteration-count:infinite;
+		-ms-animation-iteration-count:infinite;
+		-webkit-animation-iteration-count:infinite;
+		-moz-animation-iteration-count:infinite;
+	animation-direction:normal;
+		-o-animation-direction:normal;
+		-ms-animation-direction:normal;
+		-webkit-animation-direction:normal;
+		-moz-animation-direction:normal;
+	transform:scale(.3);
+		-o-transform:scale(.3);
+		-ms-transform:scale(.3);
+		-webkit-transform:scale(.3);
+		-moz-transform:scale(.3);
+	border-radius:19px;
+		-o-border-radius:19px;
+		-ms-border-radius:19px;
+		-webkit-border-radius:19px;
+		-moz-border-radius:19px;
+}
+
+#circleindicator_1{
+	left:0;
+	animation-delay:0.6s;
+		-o-animation-delay:0.6s;
+		-ms-animation-delay:0.6s;
+		-webkit-animation-delay:0.6s;
+		-moz-animation-delay:0.6s;
+}
+
+#circleindicator_2{
+	left:29px;
+	animation-delay:0.75s;
+		-o-animation-delay:0.75s;
+		-ms-animation-delay:0.75s;
+		-webkit-animation-delay:0.75s;
+		-moz-animation-delay:0.75s;
+}
+
+#circleindicator_3{
+	left:58px;
+	animation-delay:0.9s;
+		-o-animation-delay:0.9s;
+		-ms-animation-delay:0.9s;
+		-webkit-animation-delay:0.9s;
+		-moz-animation-delay:0.9s;
+}
+
+
+
+
+
+@keyframes bounce_circleindicator{
+	0%{
+	transform:scale(1);
+		background-color:rgb(0,0,0);
+	}
+
+	50%{
+	transform:scale(.3);
+		background-color:rgb(255,255,255);
+	}
+}
+
+@-o-keyframes bounce_circleindicator{
+	0%{
+	-o-transform:scale(1);
+		background-color:rgb(0,0,0);
+	}
+
+	100%{
+	-o-transform:scale(.3);
+		background-color:rgb(255,255,255);
+	}
+}
+
+@-ms-keyframes bounce_circleindicator{
+	0%{
+	-ms-transform:scale(1);
+		background-color:rgb(0,0,0);
+	}
+
+	100%{
+	-ms-transform:scale(.3);
+		background-color:rgb(255,255,255);
+	}
+}
+
+@-webkit-keyframes bounce_circleindicator{
+	0%{
+	-webkit-transform:scale(1);
+		background-color:rgb(0,0,0);
+	}
+
+	100%{
+	-webkit-transform:scale(.3);
+		background-color:rgb(255,255,255);
+	}
+}
+
+@-moz-keyframes bounce_circleindicator{
+	0%{
+	-moz-transform:scale(1);
+		background-color:rgb(0,0,0);
+	}
+
+	100%{
+	-moz-transform:scale(.3);
+		background-color:rgb(255,255,255);
+	}
+}
+
+</style>
+
+
+
+  <div id="content">
+    {% include "includes/phase_banner_beta.html" %}
+
+    <div class="grid-row">
+      <div>
+
+      <h1 class="heading-large" style="text-align:center;"> Signing in progress
+			   <!--span id="circleindicator" style="display:inline-block;vertical-align:bottom;">
+					<div id="circleindicator_1" class="circleindicator"></div>
+					<div id="circleindicator_2" class="circleindicator"></div>
+					<div id="circleindicator_3" class="circleindicator"></div>
+			  </span-->
+      </h1>
+
+
+
+      <p class="panel-indent"  style="text-align:center;">
+       This can take up to 10 seconds - please don't close or refresh this web page.
+      </p>
+
+ <div class="fullwidth-loading" style="text-align:center;">
+
+
+
+
+
+
+
+        <img src="/public/images/ajax-loader.gif" alt="loading animation" title="" class="ajaxLoader"/>
+      </div>
+
+
+      </div>
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}
+
+{% block body_end %}
+  {{ super() }}
+
+
+  <script type="text/javascript">
+   var timeoutID = window.setTimeout(move, 5000);
+   function move() {
+     window.location.href = 'finished';
+   }
+  </script>
+	<!--
+	<script type="text/javascript" src="/public/lr-style-guide/lr-styleguide/js/styleguide.min.js"></script>
+-->
+
+  {% include "dialogs/all.html" %}
+{% endblock %}

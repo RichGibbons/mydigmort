@@ -1,0 +1,387 @@
+{% extends "layout.html" %}
+
+{% block head %}
+  {{ super() }}
+
+  <style type="text/css">
+  .button-disabled {
+  	opacity: 0.5;
+  }
+  </style>
+{% endblock %}
+
+{% block page_title %}
+  View your mortgage deed
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+  
+  
+  <style>
+  
+  
+  @media (min-width: 641px)
+
+.task-completed {
+    font-size: 16px;
+    line-height: 1.25;
+}
+
+
+.task-completed {
+    display: -moz-inline-stack;
+    display: inline-block;
+    margin: 0 8px 0 0;
+    padding: 2px 5px 0;
+    font-family: "nta", Arial, sans-serif;
+    font-weight: 700;
+    text-transform: none;
+    font-size: 14px;
+    line-height: 1.14286;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #005ea5;
+    float: none;
+    margin-right: 5px;
+    padding-top: 3px;
+}
+  
+  
+  </style>
+  
+  
+  
+
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<!--h1 class="heading-xlarge">Welcome to the digital mortgage signing service</h1-->
+			<!--h2 class="heading-xlarge">Identity verified</h1-->
+			<h2 class="heading-xlarge">Your information</h1>
+
+			{% if session.mode == 'first' %}
+				<!--p class="bold-xsmall" style="color:red">Prototype is in "first time" mode</p-->
+				<p><span class="font-small">Your Name:</span>
+				<span style="font-weight:bold">{{data.fname}}</span></p>
+				<p>
+				<span class="font-small">Second Borrower:</span>
+				<span style="font-weight:bold">{{data.mname}} </span>
+				<span class="font-small" style="color: #005EA5;  font-style:italic; font-style:bold;">
+				&nbsp;&nbsp;<strong class="task-completed" id="eligibility-completed">Awaiting signature</strong>
+				</span>
+				
+				
+				</p>
+
+
+				<p> <!--span class="font-small">Represented by:</span-->
+				<span class="font-small">Arranged by: </span>
+				<span style="font-weight:bold">
+				{{data.company}}
+				</span>
+				</p>
+
+			{% endif %}
+
+			{% if session.mode == 'second' %}
+				<!--p class="bold-xsmall" style="color:red">Prototype is in "second time" mode</p-->
+				<p>
+				<span class="font-small">Your name:</span>
+
+				<span style="font-weight:bold">
+				{{data.fname}}
+				</span>
+
+				<span style="color: #005EA5; font-style:italic; font-weight:bold">
+				&nbsp;Signed
+				</span>
+				</p>
+						<p>
+							<span class="font-small" >Second Borrower:</span>
+							<span style="font-weight:bold" > {{data.mname}}</span>
+							
+							
+							
+							
+							
+							
+							
+							<!--span class="font-small" style="color: #005EA5;  font-style:italic; font-style:bold;">
+									&nbsp;Awaiting signature</span--> 
+									&nbsp;<strong class="task-completed" id="eligibility-completed">Awaiting signature</strong>
+						</p>
+
+				<p>
+				<span class="font-small">Arranged by: </span>
+				<span style="font-weight:bold">{{data.companyb}} </span>
+				</p>
+				{% endif %}
+				<br />
+
+
+				{% if session.mode == 'something-else' %}
+
+				<p>
+				<span class="font-small">Your Name:</span>
+
+				<span style="font-weight:bold">
+				{{data.fname}}
+				</span>
+
+				<span style="color: #005EA5; font-weight:bold">
+				&nbsp;Awaiting signing
+				</span>
+				</p>
+
+
+				<p>
+				<span class="font-small">Arranged by: </span>
+				<span style="font-weight:bold">{{data.companyb}} </span>
+				</p>
+
+			   {% endif %}
+
+			   {% if session.mode == 'fourth-test' %}
+
+				<p>
+				<span class="font-small">First Borrower:</span>
+
+				<span style="font-weight:bold">
+				{{data.fname}}
+				</span>
+
+				<span style="color: #005EA5; font-style:italic; font-weight:bold">
+				&nbsp; Signed
+				</span>
+				</p>
+
+
+				<p>
+				<span class="font-small">Arranged by: </span>
+				<span style="font-weight:bold">{{data.companyb}} </span>
+				</p>
+
+			   {% endif %}
+
+
+			    {% if (session.mode == 'fifth-effective') %}
+
+			    <p><span class="font-small">Your Name:</span>
+				<span style="font-weight:bold">{{data.fname}}</span>
+				<span class="font-small" style="color: #005EA5;  font-style:italic; font-style:bold;">
+				&nbsp;Signed
+				</span>
+				</p>
+
+
+				<p> <!--span class="font-small">Represented by: </span-->
+				<span class="font-small">Arranged by: </span>
+				<span style="font-weight:bold">
+				{{data.company}}
+				</span>
+				</p>
+
+
+			   {% endif %}
+
+
+
+			     {% if  (session.mode == 'sixth-effective')  %}
+
+
+			     <p><span class="font-small">Your Name:</span>
+				<span style="font-weight:bold">{{data.fname}}</span>
+				<span class="font-small" style="color: #005EA5;  font-style:italic; font-style:bold;">
+				&nbsp;Signed
+				</span>
+
+				</p>
+				<p>
+				<span class="font-small">Second Borrower:</span>
+				<span style="font-weight:bold">{{data.mname}} </span>
+				<span class="font-small" style="color: #005EA5;  font-style:italic; font-style:bold;">
+				&nbsp;Signed
+				</span></p>
+
+
+				<p> <!--span class="font-small">Represented by: </span-->
+				<span class="font-small">Arranged by: </span>
+				<span style="font-weight:bold">
+				{{data.company}}
+				</span>
+				</p>
+
+
+
+			     {% endif %}
+
+				{% if (session.mode == 'fifth-effective' or session.mode == 'sixth-effective') %}
+
+				<!--p>
+				<br />
+				Your Mortgage Deed is digitally signed, effective from xx/xx/2017. Please contact <span style="font-weight:bold">
+				{{data.company}}
+				</span> if you require further information.
+			</p-->
+
+
+			<p>
+				<br />
+			Your mortgage deed is <a href="https://www.gov.uk/government/publications/official-copies-of-documents-registration-oc2" >
+			digitally signed, a copy</a> of it will be available from HM Land Registry. Please contact <span style="font-weight:bold">
+				{{data.company}}
+				</span> if you require further information.
+			</p>
+
+
+
+				{% else %}
+
+
+			<form action="mortgage-deed">
+				<div class="verified-container">
+					<ol>
+						<li id="naa-agree">
+
+							<div>
+								<h3 class="heading-small">
+
+							 <!--You must read and accept the terms of use to continue.--> 
+							 You must read and accept the <a href="naab">terms of use</a> to continue
+							 
+							 </h3>
+								 <div class="form-group">
+									<label class="block-label" for="terms">
+										<input id="terms" name="session[terms]" type="checkbox" value="terms"{% if session.terms%} john{% endif %}>
+										 <!--I have read and accept Land Registry’s <a href="naab">terms of use</a> for this service.-->
+										 Yes! I have read and accept HM Land Registry’s terms.
+									</label>
+								</div>
+							</div>
+						</li>
+					</ol>
+				</div>
+
+
+		   {% endif %}
+
+		   	{% if (session.mode == 'fifth-effective' or session.mode == 'sixth-effective') %}
+								<div class="spacer_20"></div>
+							 <div class="spacer_20"></div>
+							 <a href="exit" class="button" style="float:left;">Finish</a>
+
+
+
+			{% else %}
+
+				
+				<button class="button" id="btn" >Continue</button>
+
+
+
+			</form>
+
+			{% endif %}
+
+
+		</div>
+
+		<div class="column-one-third">
+			{% if (session.mode == 'fifth-effective' or session.mode == 'sixth-effective') %}
+								<div class="spacer_20"></div>
+
+
+			{% else %}
+					 {% include "includes/john.html" %}
+
+			{% endif %}
+
+
+
+
+
+
+
+
+		<!-- Help container for site not mobile friendly yet -->
+
+
+		</div>
+
+
+
+
+
+
+
+
+
+	</div>
+</main>
+
+{% endblock %}
+
+{% block body_end %}
+  {{ super() }}
+
+<script>
+
+		var button = $('#btn');
+		var terms = $('#terms');
+		var message = $('<p role="alert" class="error-message">Please read and accept the HM Land Registry&#39;s terms of use.</p>');
+
+		message.find('a').on('click', function(e) {
+			e.preventDefault();
+
+			var body = $('html, body');
+			body
+				.stop()
+				.animate({
+					scrollTop:$('#naa-agree').offset().top
+				}, 250, function() {
+					terms.closest('label').focus();
+				});
+		});
+
+		function updateButton() {
+			if(terms.is(':checked')) {
+				button.removeAttr('disabled');
+			} else {
+				button.attr('disabled', true);
+			}
+		}
+
+		function updateError() {
+			if(terms.is(':checked')) {
+				terms.closest('.form-group').removeClass('error');
+				message.remove()
+			} else {
+				terms.closest('.form-group').addClass('error');
+				terms.closest('.form-group').append(message);
+			}
+		}
+
+		terms.on('change', function(e) {
+			updateButton();
+			updateError();
+		});
+
+
+		button.closest('form').on('submit', function(e) {
+			if(!terms.is(':checked')) {
+				e.preventDefault();
+			}
+			updateButton();
+			updateError();
+		});
+
+		updateButton();
+
+	</script>
+
+  {% include "dialogs/all.html" %}
+{% endblock %}
