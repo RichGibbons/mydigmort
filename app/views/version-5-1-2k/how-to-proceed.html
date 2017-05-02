@@ -18,6 +18,44 @@
 
 <main id="content" role="main">
   {% include "includes/phase_banner_beta.html" %}
+  
+  
+  <style>
+  
+  
+  @media (min-width: 641px)
+
+.task-completed {
+    font-size: 16px;
+    line-height: 1.25;
+}
+
+
+.task-completed {
+    display: -moz-inline-stack;
+    display: inline-block;
+    margin: 0 8px 0 0;
+    padding: 2px 5px 0;
+    font-family: "nta", Arial, sans-serif;
+    font-weight: 700;
+    text-transform: none;
+    font-size: 14px;
+    line-height: 1.14286;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #005ea5;
+    float: none;
+    margin-right: 5px;
+    padding-top: 3px;
+}
+  
+  
+  </style>
+  
+  
+  
 
 	<div class="grid-row">
 		<div class="column-two-thirds">
@@ -33,11 +71,14 @@
 				<span class="font-small">Second Borrower:</span>
 				<span style="font-weight:bold">{{data.mname}} </span>
 				<span class="font-small" style="color: #005EA5;  font-style:italic; font-style:bold;">
-				&nbsp;Awaiting signature
-				</span></p>
+				&nbsp;&nbsp;<strong class="task-completed" id="eligibility-completed">Awaiting signature</strong>
+				</span>
+				
+				
+				</p>
 
 
-				<p> <!--span class="font-small">Represented by: </span-->
+				<p> <!--span class="font-small">Represented by:</span-->
 				<span class="font-small">Arranged by: </span>
 				<span style="font-weight:bold">
 				{{data.company}}
@@ -62,8 +103,16 @@
 						<p>
 							<span class="font-small" >Second Borrower:</span>
 							<span style="font-weight:bold" > {{data.mname}}</span>
-							<span class="font-small" style="color: #005EA5;  font-style:italic; font-style:bold;">
-									&nbsp;Awaiting signature</span>
+							
+							
+							
+							
+							
+							
+							
+							<!--span class="font-small" style="color: #005EA5;  font-style:italic; font-style:bold;">
+									&nbsp;Awaiting signature</span--> 
+									&nbsp;<strong class="task-completed" id="eligibility-completed">Awaiting signature</strong>
 						</p>
 
 				<p>
@@ -83,7 +132,7 @@
 				{{data.fname}}
 				</span>
 
-				<span style="color: #005EA5; font-style:italic; font-weight:bold">
+				<span style="color: #005EA5; font-weight:bold">
 				&nbsp;Awaiting signing
 				</span>
 				</p>
@@ -182,7 +231,8 @@
 
 			<p>
 				<br />
-			Your mortgage deed is <a href="https://www.gov.uk/government/publications/official-copies-of-documents-registration-oc2" >digitally signed, a copy</a> of it will be available from Land Registry. Please contact <span style="font-weight:bold">
+			Your mortgage deed is <a href="https://www.gov.uk/government/publications/official-copies-of-documents-registration-oc2" >
+			digitally signed, a copy</a> of it will be available from HM Land Registry. Please contact <span style="font-weight:bold">
 				{{data.company}}
 				</span> if you require further information.
 			</p>
@@ -200,11 +250,15 @@
 							<div>
 								<h3 class="heading-small">
 
-							 You must read and accept the terms of use to continue.</h3>
+							 <!--You must read and accept the terms of use to continue.--> 
+							 You must read and accept the <a href="naab">terms of use</a> to continue
+							 
+							 </h3>
 								 <div class="form-group">
 									<label class="block-label" for="terms">
 										<input id="terms" name="session[terms]" type="checkbox" value="terms"{% if session.terms%} john{% endif %}>
-										 I have read and accept Land Registry’s <a href="naab">terms of use</a> for this service.
+										 <!--I have read and accept Land Registry’s <a href="naab">terms of use</a> for this service.-->
+										 Yes! I have read and accept HM Land Registry’s terms.
 									</label>
 								</div>
 							</div>
@@ -278,7 +332,7 @@
 
 		var button = $('#btn');
 		var terms = $('#terms');
-		var message = $('<p role="alert" class="error-message">Please read and accept the Land Registry&#39;s terms of use.</p>');
+		var message = $('<p role="alert" class="error-message">Please read and accept the HM Land Registry&#39;s terms of use.</p>');
 
 		message.find('a').on('click', function(e) {
 			e.preventDefault();

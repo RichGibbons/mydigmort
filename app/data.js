@@ -9,5 +9,7 @@ module.exports = {
   fname: 'Ann Smith',
   mname: 'Peter Smith',
   company: 'Samuel Montagu & Co.',
-  companyb: 'Samuel Montagu & Co.'
+  companyb: 'Samuel Montagu & Co.',
+  clientname: 'HM Land Registry'
+
 };
