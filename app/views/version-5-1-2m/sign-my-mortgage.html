@@ -1,0 +1,87 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  View your mortgage deed
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	{% include "includes/phase_banner_beta.html" %}
+
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<h1 class="heading-xlarge">Sign your mortgage deed</h1>
+
+
+			{% if (session.mode == 'fifth-effective' or session.mode == 'sixth-effective') %}
+			<p>To do this you will need:</p>
+
+				<ul class="list list-bullet">
+					<li>to confirm your identity using GOV.UK verify</li>
+					<li>your mobile phone registered with the conveyancer</li>
+					<li>the borrower reference supplied to you by the conveyancer. You may be asked for your borrower reference number.</li>
+				</ul>
+
+			{% elseif (session.mode == 'fourth-test' or session.mode == 'second') %}
+
+				<p>To do this you will need:</p>
+					<ul class="list list-bullet">
+						<li>to confirm your identity using GOV.UK verify</li>
+						<li>your mobile phone registered with the conveyancer</li>
+						<li>the borrower reference supplied to you by the conveyancer. You may be asked for your borrower reference number.</li>
+
+					</ul>
+
+			{% else %}
+
+			<p>To do this you will need:</p>
+					<ul class="list list-bullet">
+						<li>to confirm your identity using GOV.UK verify</li>
+						<li>your mobile phone registered with the conveyancer</li>
+						<li>the borrower reference supplied to you by the conveyancer. You may be asked for your borrower reference number.</li>
+						<!--li>to have identification documents such as Passport, Driving Licence, ID card ready</li-->
+					</ul>
+
+			<div class="font-xsmall panel panel-border-wide">
+				<p>
+
+
+					Land Registry will retain and may share your personal details for fraud prevention and detection purposes.
+					Land Registry may also carry out third party checks in relation to the information supplied.
+					For further information please view our <a href="https://www.gov.uk/government/organisations/land-registry/about/personal-information-charter">personal information charter.</a>
+				</p>
+
+			</div>
+
+			<br/>
+
+					{% endif %}
+
+			<p>
+
+			<a href="{{data.verifyUrl}}" class="button button-start" role="button">Start now</a>
+
+			</p>
+
+
+			<details>
+				<summary>
+					Why is the government involved in this?
+				</summary>
+        <div class="panel panel-border-narrow">
+				  <a href="https://www.gov.uk/government/organisations/land-registry/about" rel="external">Land Registry</a> records any change to the ownership of registered land or property - this includes changes to mortgages and leases.
+        </div>
+			</details>
+
+
+		</div>
+	</div>
+</main>
+
+{% endblock %}
+
+{% block body_end %}
+  {{ super() }}
+  {% include "dialogs/all.html" %}
+{% endblock %}
