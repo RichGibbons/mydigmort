@@ -1,25 +1,31 @@
 {% extends "layout.html" %}
 
 {% block page_title %}
-  Question page
+  Request a confirmation code
 {% endblock %}
 
 {% block content %}
 
 <main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
   <div class="grid-row">
     <div class="column-two-thirds">
-
-      <a class="link-back" href="/url/of/previous/page">Back</a>
-
       <h1 class="heading-large">
-        Heading goes here
+        Request a confirmation code
       </h1>
-
-      <p>This is a paragraph of text. It explains in more detail what has happened and wraps across several lines.</p>
-
-      <p>This paragraph has a link to <a href="/url/of/onward/page">find out more about this subject</a>.</p>
-
+      <p>If you’re ready to sign your mortgage deed, we’ll send you a code by text. This is to make sure the right person is signing.</p>
+      <p>The number we’ll text the code to is:<br>
+      <span class="heading-small">07700 900640</p>
+      <p>We’ll ask you to enter this code on the next screen to confirm you’re happy to sign your mortgage deed.</p>
+      <div class="form-group">
+        <a href="confirm-and-sign" class="button">Continue</a>
+	    </div>
+	    <details>
+        <summary><span class="summary">Wrong mobile number?</span></summary>
+        <div class="panel panel-border-narrow">
+          <p>Call us on 0300 006 0411. Lines are open Monday to Friday, 8:30am to 5pm. <a href="#">Find out about call charges</a>.</p>
+        </div>
+      </details>
     </div>
   </div>
 </main>
