@@ -76,9 +76,9 @@ router.use(function(req, res, next) {
     // Replace the last component of the path with the return page
     console.log("session mode = " + req.session['mode']);
     if(req.session['verify'] == 'non-exact-match') {
-      url = url.replace('sign-my-mortgage', 'borrower-reference');
+      url = url.replace('start-page', 'borrower-reference');
     } else {
-      url = url.replace('sign-my-mortgage', 'identity-verified');
+      url = url.replace('start-page', 'identity-verified');
     }
 
     // And bosh it in the session
