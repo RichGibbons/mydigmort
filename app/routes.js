@@ -62,6 +62,56 @@ router.use(function(req, res, next) {
  * back to the appropriate page in our application. This allows multiple proto
  * variants to be created and for them to return to the correct place when
  * coming back from the verify prototype
+ *
+ * This route applies to versions 6 and above
+ */
+router.use(function(req, res, next) {
+
+  // If we're on a page containing the verify button
+  if(req.originalUrl.indexOf('start-page') !== -1) {
+
+    // Store the current URL
+    var url = req.protocol + "://" + req.get('host') + req.originalUrl;
+
+    // Replace the last component of the path with the return page
+    console.log("session mode = " + req.session['mode']);
+    if(req.session['verify'] == 'non-exact-match') {
+      url = url.replace('sign-my-mortgage', 'borrower-reference');
+    } else {
+      url = url.replace('sign-my-mortgage', 'identity-verified');
+    }
+
+    // And bosh it in the session
+    req.session['verify-return-url'] = url;
+    console.log('Setting verify return URL to', url)
+
+
+  // If we're returning from verify (to the current fixed URL)
+  // And we've got a URL value in the session
+  } else if (req.originalUrl.indexOf('identity-verfied') !== -1 && req.session['verify-return-url']) {
+
+    // Grab the URL back out the session
+    var return_url = req.session['verify-return-url'];
+
+    // Clean up after ourselves
+    delete req.session['verify-return-url'];
+
+    // And issue the redirect
+    console.log('Redirecting to', return_url);
+    return res.redirect(return_url);
+  }
+
+  next();
+});
+
+
+/**
+ * Middleware to provide a "hack" which allows us to redirect the prototype
+ * back to the appropriate page in our application. This allows multiple proto
+ * variants to be created and for them to return to the correct place when
+ * coming back from the verify prototype
+ *
+ * LEGACY - This applies to versions 5ish and before...
  */
 router.use(function(req, res, next) {
 
@@ -86,8 +136,7 @@ router.use(function(req, res, next) {
 
   // If we're returning from verify (to the current fixed URL)
   // And we've got a URL value in the session
-  // } else if (req.originalUrl.indexOf('service_vision/how-to-proceed') !== -1 && req.session['verify-return-url']) {
-      } else if (req.originalUrl.indexOf('identity-verfied') !== -1 && req.session['verify-return-url']) {
+   } else if (req.originalUrl.indexOf('service_vision/how-to-proceed') !== -1 && req.session['verify-return-url']) {
 
     // Grab the URL back out the session
     var return_url = req.session['verify-return-url'];
