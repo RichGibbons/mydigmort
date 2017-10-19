@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Terms of use rejected
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	{% include "includes/phase_banner_beta.html" %}
+	<a href="identity-verified" class="link-back">Back</a>
+	<div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-xlarge">Terms of use rejected</h1>
+      <h2 class="heading-medium">What you should do next</h2>
+      <p>You can still sign a paper mortgage deed. To do this, contact the conveyancer who is dealing with your mortgage application. Let them know that you're unable to use the online service. They will be able to provide you with a paper mortgage deed you can sign.</p>      <p>If HM Land Registry has caused any of the loss or damage, the compensation you’ll have to pay will be reduced.</p>
+      <a href="identity-verified" class="link-back">Back</a>
+    </div>
+	</div>
+</main>
+
+
+{% endblock %}
+
+{% block body_end %}
+  {{ super() }}
+  {% include "dialogs/all.html" %}
+{% endblock %}

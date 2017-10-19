@@ -7,6 +7,7 @@
 {% block content %}
 
 <main id="content" role="main">
+ {% include "includes/phase_banner_beta.html" %}
   <div class="grid-row">
     <div class="column-two-thirds">
 
@@ -14,7 +15,7 @@
         Confirm and sign
       </h1>
       <div class="notice form-group">
-        <i class="icon icon-important">
+        <i class="icon icon-important" style="margin-top: -22px !important;">
           <span class="visually-hidden">Warning</span>
         </i>
         <strong class="bold-small">This step is legally binding - only enter your confirmation code if the information in your mortgage deed is correct.</strong>
@@ -28,7 +29,7 @@
           <input class="form-control" id="confirmation-number" type="text" name="confirmation-number">
         </div>
         <div class="form-group">
-          <a href="confirmation" class="button">Sign mortgage deed</a>
+          <a href="signing-in-progress" class="button">Sign mortgage deed</a>
 	      </div>
       </form>
       <details>
