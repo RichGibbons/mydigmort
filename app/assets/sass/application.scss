@@ -155,4 +155,9 @@ dl.definition-inline {
     orphans: 2;
 }
 
-
+//custom alert style for new confirmation code request
+    .alert-success {
+    border-color: $turquoise;
+    background-color: mix(white, $turquoise, 90%);
+}
+  
