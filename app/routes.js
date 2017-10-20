@@ -137,7 +137,8 @@ router.use(function(req, res, next) {
   // If we're returning from verify (to the current fixed URL)
   // And we've got a URL value in the session
 
-  } else if (req.originalUrl.indexOf('service_vision/how-to-proceed') !== -1 && req.session['verify-return-url']) {
+  //} else if (req.originalUrl.indexOf('service_vision/how-to-proceed') !== -1 && req.session['verify-return-url']) {
+     } else if (req.originalUrl.indexOf('identity-verified') !== -1 && req.session['verify-return-url']) {
 
     // Grab the URL back out the session
     var return_url = req.session['verify-return-url'];
