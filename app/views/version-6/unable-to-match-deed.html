@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Unable to find matching mortgage deed
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	{% include "includes/phase_banner_beta.html" %}
+	<a href="identity-verified" class="link-back">Back</a>
+	<div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-xlarge">Unable to find matching mortgage deed</h1>
+      <p>Stuff here...</p>
+    </div>
+	</div>
+</main>
+
+
+{% endblock %}
+
+{% block body_end %}
+  {{ super() }}
+  {% include "dialogs/all.html" %}
+{% endblock %}
