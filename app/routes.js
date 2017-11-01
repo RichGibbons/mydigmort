@@ -74,7 +74,7 @@ router.use(function(req, res, next) {
     var url = req.protocol + "://" + req.get('host') + req.originalUrl;
 
     // Replace the last component of the path with the return page
-    console.log("session mode = " + req.session['mode']);
+    console.log(req.session);
     if(req.session['verify'] == 'non-exact-match') {
       url = url.replace('start-page', 'borrower-reference');
     } else if (req.session['verify'] == 'unable-to-match-deed') {
