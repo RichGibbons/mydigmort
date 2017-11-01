@@ -77,6 +77,8 @@ router.use(function(req, res, next) {
     console.log("session mode = " + req.session['mode']);
     if(req.session['verify'] == 'non-exact-match') {
       url = url.replace('start-page', 'borrower-reference');
+    } else if (req.session['verify'] == 'unable-to-match-deed') {
+      url = url.replace('start-page', 'unable-to-match-deed');
     } else {
       url = url.replace('start-page', 'identity-verified');
     }
@@ -84,7 +86,6 @@ router.use(function(req, res, next) {
     // And bosh it in the session
     req.session['verify-return-url'] = url;
     console.log('Setting verify return URL to', url)
-
 
   // If we're returning from verify (to the current fixed URL)
   // And we've got a URL value in the session

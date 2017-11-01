@@ -46,7 +46,11 @@
 		    <p>Land Registry will retain and may share your personal details for fraud prevention and detection purposes.	Land Registry may also carry out third party checks in relation to the information supplied. For further information please view our <a href="https://www.gov.uk/government/organisations/land-registry/about/personal-information-charter">personal information charter.</a></p>
       </div>
       <!--simple static verify route <p><a class="button button-start" href="verify1" role="button">Start now</a></p> -->
-      <p><a class="button button-start" href="{{data.verifyUrl}}" role="button">Start now</a></p>
+      {% if session.mode == 'verify-service-unavailable' %}
+        <p><a class="button button-start" href="verify-service-unavailable" role="button">Start now</a></p>
+      {% else %}
+        <p><a class="button button-start" href="{{data.verifyUrl}}" role="button">Start now</a></p>
+      {% endif %}
 
     </div>
 <!--    
