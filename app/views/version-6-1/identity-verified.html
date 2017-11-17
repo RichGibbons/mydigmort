@@ -1,0 +1,84 @@
+{% extends "govuk_template.html" %}
+
+{% block head %}
+  {% include "includes/head.html" %}
+{% endblock %}
+
+{% block proposition_header %}
+  {% include "includes/propositional_navigation.html" %}
+{% endblock %}
+
+{% block header_class %}
+  with-proposition
+{% endblock %}
+
+{% block page_title %}
+  Identity verified
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<h1 class="heading-xlarge">Identity verified</h1>
+
+			<p>You can now review and sign your mortgage deed online.</p>
+			<p>The next steps are:</p>
+
+			<div class="verified-container">
+				<ol>
+					<li>
+						<img class="verified-bullets-img" src="/public/images/icon-step-1-2x.png">
+						<div class="verified-bullets">
+							<h3 class="heading-small">Check your mortgage deed</h3>
+							<p>You should read your mortgage deed carefully, to make sure you’re happy with everything in it.</p>
+						</div>
+					</li>
+
+					<li>
+						<img class="verified-bullets-img" src="/public/images/icon-step-2-2x.png">
+						<div class="verified-bullets">
+							<h3 class="heading-small">Request an authentication code</h3>
+							<p>We’ll send you a code by text - this helps to make sure the right person is signing your mortgage deed.</p>
+						</div>
+					</li>
+
+			  		<li>
+						<img class="verified-bullets-img" src="/public/images/icon-step-3-2x.png">
+						<div class="verified-bullets">
+              <h3 class="heading-small">Sign your mortgage deed</h3>
+							<p>Enter your code to confirm you're happy to sign your mortgage deed. Doing so means that you don’t need to sign a paper document or get your signature witnessed.</p>
+						</div>
+					</li>
+
+				</ol>
+			</div>
+
+      <div class="panel panel-border-wide">
+        <p>By continuing you accept <a href="terms">HM Land Registry’s terms of use</a> for this service.</p>
+      </div>
+    
+			<div class="form-group">
+				<p>
+					<a href="check-your-deed" class="button">
+						Accept terms and continue
+					</a>
+				</p>
+			</div>
+			<div class="text">
+        <p><a href="reject-terms">Reject terms of use</a></p>
+		</div>
+	</div>
+</main>
+
+{% endblock %}
+
+{% block body_end %}
+  {% include "includes/scripts.html" %}
+	<!--
+	<script type="text/javascript" src="/public/lr-style-guide/lr-styleguide/js/styleguide.min.js"></script>
+-->
+{% endblock %}

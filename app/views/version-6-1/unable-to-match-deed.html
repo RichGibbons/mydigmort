@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Unable to find matching mortgage deed
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	<a href="identity-verified" class="link-back">Back</a>
+	<div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-xlarge">Something went wrong</h1>
+      <p>We haven’t been able to find a mortgage deed for you to sign.</p>
+      <p>Contact your Samual Montagu &amp; Co. for help.</p>
+      <!--<a href="identity-verified" class="link-back">Back</a>-->
+    </div>
+	</div>
+</main>
+
+
+{% endblock %}
+
+{% block body_end %}
+  {{ super() }}
+  {% include "dialogs/all.html" %}
+{% endblock %}
