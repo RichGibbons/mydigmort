@@ -1,0 +1,126 @@
+{% extends "govuk_template.html" %}
+
+{% block head %}
+  {% include "includes/head.html" %}
+{% endblock %}
+
+{% block proposition_header %}
+  {% include "includes/propositional_navigation.html" %}
+{% endblock %}
+
+{% block header_class %}
+  with-proposition
+{% endblock %}
+
+{% block page_title %}
+  Identity verified
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<h1 class="heading-xlarge">Identity verified</h1>
+
+			<p>You can now use this service to review and sign your mortgage deed online.</p>
+			<p>The next steps are:</p>
+
+			<div class="verified-container">
+				<ol>
+					<li>
+						<img class="verified-bullets-img" src="/public/images/icon-step-1-2x.png">
+						<div class="verified-bullets">
+							<h3 class="heading-small">Check your mortgage deed</h3>
+							<p>You should read your mortgage deed carefully, to make sure you’re happy with everything in it. We'll ask you to do this on the next page.</p>
+						</div>
+					</li>
+
+					<li>
+						<img class="verified-bullets-img" src="/public/images/icon-step-2-2x.png">
+						<div class="verified-bullets">
+							<h3 class="heading-small">Request an authentication code</h3>
+							<p>If you're happy with your mortgage deed, we’ll send you a new code by text.</p>
+						</div>
+					</li>
+
+			  		<li>
+						<img class="verified-bullets-img" src="/public/images/icon-step-3-2x.png">
+						<div class="verified-bullets">
+              <h3 class="heading-small">Sign your mortgage deed</h3>
+							<p>Enter your new code to confirm you're happy to sign your mortgage deed. Doing so means that you don’t need to sign a paper document or get your signature witnessed.</p>
+						</div>
+					</li>
+
+				</ol>
+			</div>
+
+      <div class="grid-row">
+  <div class="column-two-thirds">
+
+    <div class="error-summary" role="alert" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
+
+      <h2 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+        You haven’t accepted the terms of use
+      </h2>
+
+      <ul class="error-summary-list">
+        <li><a href="#example-personal-details">You must read and accept the terms of use to continue</a></li>
+      </ul>
+
+    </div>
+
+    <form>
+      <div class="form-group form-group-error">
+        <fieldset>
+
+          <legend id="example-personal-details">
+
+            <span class="form-label-bold">
+              You must read and accept the <a href="terms">terms of use</a> to continue
+            </span>
+            <span class="error-message">
+              You must read and accept HM Land Registry's terms of use
+            </span>
+
+          </legend>
+
+          <div class="multiple-choice">
+            <input id="personal_details_yes" type="checkbox" name="personalDetails" value="Yes">
+            <label for="personal_details_yes">I have read and accept HM Land Registry's terms of use</label>
+          </div>
+
+        </fieldset>
+      </div>
+
+      <input class="button" type="submit" value="Continue">
+
+    </form>
+
+  </div>
+</div>
+
+
+			<div class="form-group">
+				<p>
+					<a href="check-your-deed" class="button">
+						Continue
+					</a>
+				</p>
+			</div>
+			<div class="text">
+        <p><a href="reject-terms">Reject terms of use</a></p>
+		</div>
+	</div>
+</main>
+
+{% endblock %}
+
+{% block body_end %}
+  {% include "includes/scripts.html" %}
+	<!--
+	<script type="text/javascript" src="/public/lr-style-guide/lr-styleguide/js/styleguide.min.js"></script>
+-->
+{% endblock %}

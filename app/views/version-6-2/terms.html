@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Terms of use
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	{% include "includes/phase_banner_beta.html" %}
+	<a href="identity-verified" class="link-back">Back</a>
+	<div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-xlarge">Terms of use</h1>
+      <p class="lede">This signature network access agreement (‘agreement’) outlines the terms of use for the sign your mortgage deed service (‘service’).</p>
+      <p>This service can only be used to view and sign a mortgage deed using an electronic signature supplied by the Chief Land Registrar (‘Land Registry’).</p>
+      <p>To use this service must:</p>
+      <ul class="list list-bullet">
+        <li>be at least 18 years old</li>
+        <li>have effective security and virus protection on the computer or device you're using</li>
+        <li>keep your login and security details safe and not share them with anyone</li>
+      </ul>
+      <div class="panel panel-border-wide">
+        <p>Call us on 0300 006 0411 if you think someone has access to your login or security details</p>
+      </div>
+      <p>We reserve the right to end this agreement and remove your access to this service at any time.</p>
+      <p>This agreement will end automatically if you die or are made bankrupt.</p>
+      <h2 class="heading-medium">Your liability</h2>
+      <p>If you break this agreement, you’ll have to compensate HM Land Registry and third parties for any loss or damage they suffer as a result.</p>
+      <p>If HM Land Registry has caused any of the loss or damage, the compensation you’ll have to pay will be reduced.</p>
+      <h2 class="heading-medium">HM Land Registry’s liability</h2>
+      <p>Where it’s at fault, HM Land Registry’s standard legal requirement to pay compensation for losses or damages does not change.</p>
+      <p>There’s no limit on the compensation it has to pay for:</p>
+      <ul class="list list-bullet">
+        <li>death or personal injury resulting from its negligence</li>
+        <li>acts or omissions it makes in bad faith</li>
+      </ul>
+      <p>Additionally, HM Land Registry will compensate you for costs and expenses you incur as a direct result of it acting wrongly under the law, provided these total more than £120 but less than £250.</p>
+      <p>It does not have to pay compensation for losses or damages caused by:</p>
+      <ul class="list list-bullet">
+        <li>any action it takes as the registrar, by law or which it is entitled to make according to this agreement</li>
+        <li>you breaking the terms of this agreement or the law, unless that happened because HM Land Registry broke this agreement or failed in its duties</li>
+        <li>any damage caused to your computer or device as a result of you failing to provide up-to-date antivirus measures software</li>
+        <li>any damage caused by you or anyone else deliberately altering the service or introducing a virus, worm or other malignant software</li>
+        <li>inaccurate information supplied by the ‘sign your digital mortgage’ service, except where compensation is required by law.</li>
+      </ul>
+      <p>HM Land Registry’s employees and agents are not personally liable for any loss or damage you or anyone else suffers, unless they have acted in bad faith.</p>
+      <h2 class="heading-medium">Changes to these terms of use</h2>
+      <p>We may, from time-to-time, change the terms of use for this service. This will not be while you’re reading or signing your deed.</p>
+      <p>Last updated: 8 August 2017</p>
+      <a href="identity-verified" class="link-back">Back</a>
+    </div>
+	</div>
+</main>
+
+
+{% endblock %}
+
+{% block body_end %}
+  {{ super() }}
+  {% include "dialogs/all.html" %}
+{% endblock %}
