@@ -1,0 +1,169 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  View your mortgage deed
+{% endblock %}
+
+{% block content %}
+
+<style type="text/css">
+	.hub {
+		background-color: #005ea5;
+		color: #fff;
+		padding-top: 0;
+		margin-top: 30px;
+		margin-bottom: 30px;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		min-height: 480px;
+		padding: 45px;
+	}
+
+	.hub h1 {
+		font-family: "nta", Arial, sans-serif;
+		font-size: 27px;
+		line-height: 1.1111111111;
+		font-weight: 700;
+		text-transform: none;
+		line-height: 1.2;
+		margin-bottom: 30px;
+	}
+
+	.hub .selectable.binary {
+		display: inline-block;
+		width: auto;
+		margin: 0 10px 0 0;
+	}
+
+	.hub .selectable {
+		color: #fff;
+		border-color: rgba(255, 255, 255, 0);
+	}
+
+	.binary {
+		width: 67%;
+	}
+
+	.selectable {
+		display: block;
+		position: relative;
+		color: #0b0c0c;
+		padding: 10px 30px 10px 42px;
+		cursor: pointer;
+	}
+
+	.selectable .fake-input-radio {
+		width: 18px;
+		height: 18px;
+		padding: 4px;
+		border-radius: 20px;
+	}
+
+	.selectable .fake-input {
+		display: block;
+		position: absolute;
+		left: 7px;
+		top: 8px;
+		width: 20px;
+		height: 20px;
+		padding: 3px;
+		border: 2px solid #0b0c0c;
+		background: #fff;
+	}
+
+	.hub .actions .button {
+		display: inline-block;
+		min-width: 160px;
+		padding: 8px 10px 6px 10px;
+		border: 1px solid #fff;
+		text-decoration: none;
+		background-color: #fff;
+		color: #005ea5;
+		font-weight: bold;
+		margin: 0 0 0 0px;
+	}
+
+	.hub figure {
+		width: 100%;
+		margin-bottom: 30px;
+	}
+
+	.hub figure {
+		float: left;
+		max-width: 200px;
+	}
+
+	.block-label:hover {
+		background-color: #0b0c0c; }
+</style>
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+	<div class="hub">
+		<div class="grid-row" style="padding-top: 40px">
+			<div class="column-third">
+				<figure class="figure" style="padding-left: 50px">
+					<img src="/public/images/icon-crown-shield-2.png" alt="GOV.UK VERIFY" />
+				</figure>
+			</div>
+			<div class="column-two-thirds">
+
+				<h1>Sign in with GOV.UK Verify</h1>
+
+				<div class="form-group">
+
+					<label class="block-label" style="background: #005ea5; border: none"
+						   onmouseover="this.style.backgroundColor='#0095ff'" onmouseout="this.style.backgroundColor='#005ea5'">
+						<input type="radio" name="beenVerified" value="false">
+						This is my first time using Verify
+					</label>
+
+					<label class="block-label" style="background: #005ea5; border: none"
+						   onmouseover="this.style.backgroundColor='#0095ff'" onmouseout="this.style.backgroundColor='#005ea5'">
+						<input type="radio" name="beenVerified" value="true">
+						I've used Verify before
+					</label>
+				</div>
+
+				<div class="actions">
+					<a class="button button-action next" href="verify2">
+						Continue
+					</a>
+				</div>
+
+				<script>
+					verify = (typeof verify === 'undefined') ? {} : verify;
+
+					verify.intro = {
+						init: function(options){
+							$('.next').on('click', function(e){
+								e.preventDefault();
+
+								var beenVerified = $('input[name="beenVerified"]:checked').val();
+
+								if (beenVerified == "false"){
+									window.location.href="/intro-2?requestId=" + options.requestId;
+								} else if (beenVerified == "true"){
+									window.location.href="/sign-in?requestId=" + options.requestId;
+								} else {
+									return;
+								}
+							});
+						}
+					};
+				</script>
+
+				<script type="text/javascript">
+					$(function(){
+						verify.intro.init({"requestId": "sign-mortgage"});
+					});
+				</script>
+
+			</div>
+		</div>
+	</div>
+</main>
+
+{% endblock %}

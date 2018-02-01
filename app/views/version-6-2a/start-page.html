@@ -1,0 +1,76 @@
+  {% extends "layout.html" %}
+
+{% block page_title %}
+  Sign your mortgage deed
+{% endblock %}
+
+{% block proposition_header %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+<!--
+  <div class="breadcrumbs">
+    <ol>
+      <li><a href="https://www.gov.uk">Home</a></li>
+      <li><a href="">Section</a></li>
+      <li>Subsection</li>
+    </ol>
+  </div>
+-->
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <h1 class="heading-xlarge">
+        {% if serviceName %} {{ serviceName }} {% endif %}
+      </h1>
+
+      <p>Use this service to:</p>
+
+      <ul class="list list-bullet">
+        <li>check your mortgage deed is correct</li>
+        <li>sign your mortgage deed</li>
+      </ul>
+      <h2 class="heading-medium">Before you start</h2>
+      <p>You will need to sign in with GOV.UK Verify. If you haven’t used GOV.UK Verify before, it takes about 15 minutes to get set up. You can then use it to access other government services securely.</p>
+      <p>You will also need access to the mobile phone number you gave to your mortgage lender or conveyancer.</p>
+      <p>You may also need your borrower reference - your lender or conveyancer should have given you this.</p>
+      <div class="panel panel-border-wide">
+		    <p>HM Land Registry will retain and may share your personal details for fraud prevention and detection purposes. HM Land Registry may also carry out third party checks in relation to the information supplied. For further information please view our <a href="https://www.gov.uk/government/organisations/land-registry/about/personal-information-charter">personal information charter</a>.</p>
+      </div>
+      <!--simple static verify route <p><a class="button button-start" href="verify1" role="button">Start now</a></p> -->
+      {% if session.mode == 'verify-service-unavailable' %}
+        <p><a class="button button-start" href="verify-service-unavailable" role="button">Start now</a></p>
+      {% else %}
+        <p><a class="button button-start" href="{{data.verifyUrl}}" role="button">Start now</a></p>
+      {% endif %}
+
+    </div>
+<!--
+      <div class="column-third">
+
+      <aside class="govuk-related-items" role="complementary">
+        <h2 class="heading-medium" id="subsection-title">Subsection</h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="font-xsmall">
+            <li><a href="#">Related link</a></li>
+            <li><a href="#">Related link</a></li>
+            <li><a href="#" class="bold-xsmall">More <span class="visuallyhidden">in Subsection</span></a></li>
+          </ul>
+        </nav>
+      </aside>
+
+    </div>
+-->
+  </div>
+
+</main>
+
+{% endblock %}

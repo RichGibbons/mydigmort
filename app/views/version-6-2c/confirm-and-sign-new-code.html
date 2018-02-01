@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Confirm and sign
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+ {% include "includes/phase_banner_beta.html" %}
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <h1 class="heading-xlarge">Confirm and sign</h1>
+            <div class="panel panel-border-wide alert-success"  style="margin-top: -22px !important;">
+        <p>New authentication code sent</p>
+      </div>
+      <div class="notice form-group">
+        <i class="icon icon-important" style="margin-top: -22px !important;">
+          <span class="visually-hidden">Warning</span>
+        </i>
+        <strong class="bold-small">This step is legally binding - only enter your authentication code if the information in your mortgage deed is correct.</strong>
+      </div>
+
+      <form>
+        <label class="form-label-bold" for="authentication-number">
+          Enter your authentication number
+          <span class="form-hint">For example, C6E7BA or c6e7ba</span>
+        </label>
+        <div class="form-group">
+          <input class="form-control" id="authentication-number" type="text" name="authentication-number">
+        </div>
+        <div class="form-group">
+          <a href="signing-in-progress" class="button">Sign mortgage deed</a>
+	      </div>
+      </form>
+      <details>
+        <summary><span class="summary">Not received your authentication code?</span></summary>
+        <div class="panel panel-border-narrow">
+          <p>It may take a few minutes for your authentication code to arrive. If it still has not arrived after 5 minutes <a href="confirm-and-sign-new-code">request a new code</a>.</p>
+        </div>
+      </details>
+    </div>
+       <div class="column-one-third">
+		{% include "includes/john.html" %}
+	</div>
+  </div>
+
+</main>
+
+{% endblock %}

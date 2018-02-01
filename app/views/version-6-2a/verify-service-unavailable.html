@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Verify service unavailable
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	{% include "includes/phase_banner_beta.html" %}
+	<div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-xlarge">Verify service unavailable</h1>
+      <p>The Verify service is currently unavailable.</p>
+      <p>We won’t be able to verify your identity or allow you to sign your mortgage deed online until it’s working again.</p>
+      <p>Please try again later.</p>
+    </div>
+	</div>
+</main>
+
+{% endblock %}
+
+{% block body_end %}
+  {{ super() }}
+  {% include "dialogs/all.html" %}
+{% endblock %}
