@@ -1,0 +1,103 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Check your deed
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	{% include "includes/phase_banner_beta.html" %}
+
+
+  <div class="grid-row">
+	  <div class="column-two-thirds">
+      <h1 class="heading-xlarge">Check your deed</h1>
+      <p>Your mortgage deed is an important legal document - you should read it carefully. If there's a mistake or anything you don't understand, you should contact Samual Montagu &amp; Co.</p>
+      <div class="panel panel-border-wide">
+        <p>Message from Bank of England Plc</p>
+        <p>This is an important legal document. Your property is at risk if payments are not made to the lender when due, or if there is some other termination event, in accordance with the terms of this document. You should consider taking independent legal advice from a solicitor before you sign this deed.</p>
+      </div>
+        <article class="text deed-document--bounds">
+        <h2 class="heading-large">Mortgage deed</h2>
+        <h3 class="heading-medium">Property</h3>
+        <p itemscope itemtype="http://schema.org/PostalAddress">
+          <span itemprop="streetAddress">83 Lordship Park</span><br>
+          <span itemprop="addressLocality">London</span><br>
+          <span itemprop="postalCode">N16 5UP</span>
+        </p>
+        <dl class="definition-inline">
+          <dt class="bold-small">Title number</dt>
+          <dd>GHR67832</dd>
+        </dl>
+        <h3 class="heading-medium">Lender</h3>
+        <p itemscope itemtype="http://schema.org/Corporation">
+          <span itemprop="name">Bank of England Plc</span><br>
+          <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress" class="address-inline">
+            <span itemprop="streetAddress">12 Trinity Place</span><br>
+            <span itemprop="streetAddress">Regents Street</span><br>
+            <span itemprop="addressLocality">London</span><br>
+            <span itemprop="postalCode">NW10 6TQ</span>
+          </span>
+        </p>
+        <dl class="definition-inline">
+          <dt class="bold-small">Company registration number</dt>
+          <dd>2347676</dd>
+        </dl>
+        <h3 class="heading-medium">Borrower</h3>
+        <ul>
+          <!--<li>Peter Smith</li>-->
+          <li>Ann Smith</li>
+        </ul>
+        <h3 class="heading-medium">Charging clause</h3>
+        <p>The borrower, with full title guarantee, charges to the lender the property by way of legal mortgage with payment of all money secured by the charge.</p>
+        <h3 class="heading-medium">Additional provisions</h3>
+        <ol class="list list-number">
+          <li><p>This Mortgage Deed incorporates the <!--<a href="#" rel="external">-->Lenders Mortgage Conditions and Explanation 2006<!--</a>-->, a copy of which the borrower has received.</p></li>
+          <li><p>The lender is obliged to make further advances and applies for the obligation to be entered in the register.</p></li>
+          <li><p>The borrower applies to enter a restriction in the register that no disposition of the registered estate by the proprietor of the registered estate is to be registered without a written consent signed by the proprietor for the time being of the charge dated <!--[the date of this charge]--> 27th July 2016 in favour of Bank of England Plc referred to in the charges register.</p></li>
+        </ol>
+        <h3 class="heading-medium">Effective date</h3>
+        <p>This charge takes effect when the registrar receives notification from <!--[name of conveyancer preparing the charge]--> the conveyancer preparing the charge that the charge is to take effect.</p>
+        <div class="panel panel-border-wide">
+          <p style="color: #6f777b;">Effective date will be shown here</p>
+        </div>
+        <h3 class="heading-medium">Borrower's electronic signature(s)</h3>
+        <div class="panel panel-border-wide">
+          <p style="color: #6f777b;">Signature of Ann Smith will be shown here<!--<br>Awaiting signing from Peter Smith--></p>
+        </div>
+        <div class="deed-form-ref">
+          <h3 class="visuallyhidden">Form of digital mortgage deed filed at HM Land Registry under reference</h3>
+          <p><span class="bold-small">HM Land Registry internal reference number:</span> e-MD1118</p>
+        </div>
+      </article>
+
+          <h3 class="heading-large">
+            Request an authentication code
+          </h3>
+          <br/>
+          <p>If you are happy to sign your mortgage deed, we’ll send you an authentication code by text. This will act as your electronic signature. </p>
+          <p>The number we’ll text the code to is:<br>
+          <span class="heading-small">07700 900 640</p>
+          <p>We’ll ask you to enter this code on the next screen.</p>
+          <div class="form-group">
+            <a href="confirm-and-sign" class="button">Continue</a>
+    	    </div>
+    	    <details>
+            <summary><span class="summary">Wrong mobile number?</span></summary>
+            <div class="panel panel-border-narrow">
+              <p>You need to contact Samual Montagu & Co. to give them the correct mobile number.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+{% endblock %}
+
+{% block body_end %}
+  {{ super() }}
+  {% include "dialogs/all.html" %}
+{% endblock %}

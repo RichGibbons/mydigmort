@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Mortgage deed signed
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <div class="govuk-box-highlight">
+        <h1 class="heading-xlarge">
+          Mortgage deed signed
+        </h1>
+    <!--<p class="font-large">
+          Your reference number is <br>
+          <strong class="bold">HDJ2123F</strong>
+        </p>-->
+      </div>
+        <h2 class="heading-medium">What happens next</h2>
+          <p>Now you have signed your mortgage deed. Next steps:</p>
+            <ul class="list list-bullet">
+            <li>all other borrowers have been contacted by Samual Montagu & Co. with details of how to sign</li>
+            <li>Samual Montagu and Co. will complete their paperwork and send it to HM Land Registry</li>
+            <li>HM Land Registry will then update their records</li>
+            </ul>
+          <p>The time it takes will vary, depending on your situation.</p>
+        <h2 class="heading-medium">Questions?</h2>
+      <p>If you have any questions about your mortgage deed or the next steps, contact Samual Montagu & Co.</p>
+    <div class="text">
+        <br>
+        <p><a href="https://www.gov.uk/government/organisations/land-registry">More about HM Land Registry</a></p>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+{% endblock %}
